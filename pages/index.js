@@ -14,6 +14,9 @@ import 'firebase/compat/analytics';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import Login from '@/components/Login';
+import { useUserContext } from '@/context/userContext';
+import RegisterUser from '@/components/registerUser';
+import Auth from '@/components/Auth';
 
 firebase.initializeApp({
   apiKey: "AIzaSyAum40V1RbfH_Gu0HRe51DLuOqbhZ4z40c",
@@ -34,7 +37,8 @@ const firestore = firebase.firestore();
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  const [user] = useAuthState(auth);
+  const { loading, error, user } = useUserContext()
+  // const [user] = useAuthState(auth);
 
   return (
     <div className="App flex h-[100vh] flex-col">
@@ -52,7 +56,8 @@ export default function Home() {
       </header>
 
       <section id='chat-room-section' className=' my-4 mt-[10vh]'>
-        {user ? <ChatRoom /> : <Login />}
+      {error && <p className="error font-red-500">{error}</p>}
+        {user ? <ChatRoom /> : <Auth />}
       </section>
 
     </div>
