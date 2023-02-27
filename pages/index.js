@@ -38,14 +38,20 @@ export default function Home() {
 
   return (
     <div className="App">
-      <header className='flex flex-row justify-between px-8 py-6 bg-black text-white'>
-        <h2>Logo</h2>
-        <div>
+      <header className='flex flex-row justify-between px-8 py-6 bg-header text-iosBlue'>
+      <h3 className="text-gray">
+                {"< "}
+                <span className="text-iosBlue">{"/"}</span>
+                <span className="text-black">
+                  {" Chris.dev "}
+                </span>
+                <span>{" >"}</span>
+              </h3>
+        <h1 className='font-semibold'>Chatroom App </h1>
         <SignOut />
-        </div>
       </header>
 
-      <section>
+      <section id='chat-room-section' className='mx-8 my-4'>
         {user ? <ChatRoom /> : <Login />}
       </section>
 
@@ -58,7 +64,7 @@ export default function Home() {
 
 function SignOut() {
   return auth.currentUser && (
-    <button className="sign-out block" onClick={() => auth.signOut()}>Sign Out</button>
+    <button className="text-iosBlue block" onClick={() => auth.signOut()}>Sign Out</button>
   )
 }
 
@@ -90,7 +96,7 @@ function ChatRoom() {
   }
 
   return (<>
-    <main>
+    <main className='h-[80vh]'>
 
       {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
 
@@ -98,11 +104,11 @@ function ChatRoom() {
 
     </main>
 
-    <form onSubmit={sendMessage}>
+    <form onSubmit={sendMessage} className='h-[10vh] flex align-middle'>
 
-      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
+      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Type message here" className=' my-4 block overflow-x-hidden w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-google focus:outline-none focus:ring-google sm:text-sm' />
 
-      <button type="submit" disabled={!formValue}>🕊️</button>
+      {/* <button type="submit" disabled={!formValue} className='invisible'></button> */}
 
     </form>
   </>)

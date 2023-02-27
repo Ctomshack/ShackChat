@@ -11,10 +11,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-      'sent': '#0993F6',
-      'received': '#e5e5ea',
+      'sent': '#0078ff',
+      'received': '#e9e9eb',
       'background' : '',
       'google': '#4285F4',
+      'header': '#f1f1f2',
+      'iosBlue': '#3378f6',
+      'inputRing': '#d2d2d5',
     },},
   },
   plugins: [],
