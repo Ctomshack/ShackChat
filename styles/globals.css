@@ -19,6 +19,9 @@ body {
     z-index: -1;
     background-position: 50% 50%;
 
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+
 
 }
 
@@ -32,6 +35,11 @@ body {
   overflow: scroll;
 -webkit-overflow-scrolling: touch;
 
+}
+
+main { 
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 p {
