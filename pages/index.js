@@ -96,7 +96,7 @@ function ChatRoom() {
   }
 
   return (<>
-    <main className='h-[80vh]'>
+    <main className='h-[80vh] overflow-y-scroll'>
 
       {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
 
@@ -123,7 +123,7 @@ function ChatMessage(props) {
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
   return (<>
-    <div className={`message ${messageClass}`}>
+    <div className={`message ${messageClass} flex-wrap break-all`}>
       <p>{text}</p>
     </div>
   </>)
