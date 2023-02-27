@@ -37,12 +37,12 @@ export default function Home() {
   const [user] = useAuthState(auth);
 
   return (
-    <div className="App">
-      <header className='flex flex-row justify-between px-8 py-6 bg-header text-iosBlue'>
+    <div className="App flex h-[100vh] flex-col">
+      <header className='flex flex-row justify-between px-8 py-6 bg-header text-gray-700 shadow-lg fixed w-full top-0 z-20'>
       <h3 className="text-gray">
                 {"< "}
-                <span className="text-iosBlue">{"/"}</span>
-                <span className="text-black">
+                <span className="text-iosBlue font-bold">{"/"}</span>
+                <span className="text-gray-700">
                   {" Chris.dev "}
                 </span>
                 <span>{" >"}</span>
@@ -51,7 +51,7 @@ export default function Home() {
         <SignOut />
       </header>
 
-      <section id='chat-room-section' className='mx-8 my-4'>
+      <section id='chat-room-section' className='mx-8 my-4 mt-[10vh]'>
         {user ? <ChatRoom /> : <Login />}
       </section>
 
@@ -118,11 +118,12 @@ function ChatRoom() {
 function ChatMessage(props) {
   const { text, uid, photoURL } = props.message;
 
+  // console.log(props)
+
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
   return (<>
     <div className={`message ${messageClass}`}>
-      {/* <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} /> */}
       <p>{text}</p>
     </div>
   </>)
