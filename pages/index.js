@@ -15,7 +15,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import Login from '@/components/Login';
 import { useUserContext } from '@/context/userContext';
-import RegisterUser from '@/components/registerUser';
+import RegisterUser from '@/components/RegisterUser';
 import Auth from '@/components/Auth';
 
 firebase.initializeApp({
