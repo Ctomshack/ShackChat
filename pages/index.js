@@ -13,7 +13,7 @@ import 'firebase/compat/analytics';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-import SignIn from '@/components/Login';
+import Login from '@/components/Login';
 
 firebase.initializeApp({
   apiKey: "AIzaSyAum40V1RbfH_Gu0HRe51DLuOqbhZ4z40c",
@@ -46,29 +46,15 @@ export default function Home() {
       </header>
 
       <section>
-        {user ? <ChatRoom /> : <SignIn />}
+        {user ? <ChatRoom /> : <Login />}
       </section>
 
     </div>
   );
 }
 
-<SignIn />
-// function SignIn() {
+<Login />
 
-//   const signInWithGoogle = () => {
-//     const provider = new firebase.auth.GoogleAuthProvider();
-//     auth.signInWithPopup(provider);
-//   }
-
-//   return (
-//     <>
-//       <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-//       <p>Do not violate the community guidelines or you will be banned for life!</p>
-//     </>
-//   )
-
-// }
 
 function SignOut() {
   return auth.currentUser && (
