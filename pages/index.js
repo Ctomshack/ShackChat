@@ -101,7 +101,7 @@ function ChatRoom() {
   }
 
   return (<>
-    <main className='h-[80vh] overflow-y-scroll px-4 md:px-8'>
+    <main className='h-[80vh] overflow-y-scroll px-4 md:px-8 touch-pan-y'>
 
       {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
 
