@@ -51,7 +51,7 @@ export default function Home() {
         <SignOut />
       </header>
 
-      <section id='chat-room-section' className='mx-8 my-4 mt-[10vh]'>
+      <section id='chat-room-section' className=' my-4 mt-[10vh]'>
         {user ? <ChatRoom /> : <Login />}
       </section>
 
@@ -96,7 +96,7 @@ function ChatRoom() {
   }
 
   return (<>
-    <main className='h-[80vh] overflow-y-scroll'>
+    <main className='h-[80vh] overflow-y-scroll px-4 md:px-8'>
 
       {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
 
@@ -104,9 +104,9 @@ function ChatRoom() {
 
     </main>
 
-    <form onSubmit={sendMessage} className='h-[10vh] flex align-middle'>
+    <form onSubmit={sendMessage} className='h-[10vh] flex align-middle bg-header shadow-lg'>
 
-      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Type message here" className=' my-4 block overflow-x-hidden w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-google focus:outline-none focus:ring-google sm:text-sm' />
+      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Type message here" className='mx-4 md:mx-12 my-4 block overflow-x-hidden w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-google focus:outline-none focus:ring-google sm:text-sm' />
 
       {/* <button type="submit" disabled={!formValue} className='invisible'></button> */}
 
