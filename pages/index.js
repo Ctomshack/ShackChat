@@ -17,6 +17,7 @@ import Login from '@/components/Login';
 import { useUserContext } from '@/context/userContext';
 import RegisterUser from '@/components/RegisterUser';
 import Auth from '@/components/Auth';
+import ChatMessage from '@/components/ChatMessage';
 
 firebase.initializeApp({
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
@@ -84,9 +85,9 @@ function SignOut() {
 function ChatRoom() {
   const textValue = useRef();
   const messagesRef = firestore.collection('messages');
-  const query = messagesRef.orderBy('createdAt');
+  const messagesQuery = messagesRef.orderBy('createdAt');
 
-  const [messages] = useCollectionData(query, { idField: 'id' });
+  const [messages] = useCollectionData(messagesQuery, { idField: 'id' });
 
   const [formValue, setFormValue] = useState('');
 
@@ -116,7 +117,7 @@ function ChatRoom() {
   return (<>
     <main className='chat-room h-[80vh] overflow-y-scroll px-4 md:px-8 touch-pan-y'>
 
-      {messages && messages.map(msg => <ChatMessage key={msg.createdAt} message={msg} />)}
+      {messages && messages.map(message => <ChatMessage key={message.createdAt} message={message} />)}
 
       <span ref={textValue}></span>
 
@@ -133,21 +134,3 @@ function ChatRoom() {
 }
 
 
-function ChatMessage(props) {
-  const { text, uid, photoURL, displayName } = props.message;
-
-  // console.log(props.message)
-
-  const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
-
-  return (<>
-    <div className={`message ${messageClass} `}>
-      <div className={` ${messageClass} w-full message flex-row gap-0.5`}>
-
-      <div className={`text-sm text-gray-600 self-middle ${messageClass} px-2`}>{displayName}</div>
-      <p className='dropshadow-lg shadow-md'>{text}</p>
-      </div>
-
-    </div>
-  </>)
-}
