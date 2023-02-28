@@ -6,7 +6,6 @@ import Login from "@/components/Login";
 import { useUserContext } from "@/context/userContext";
 import Auth from "@/components/Auth";
 import ChatRoom from "@/components/ChatRoom";
-import Logout from "@/components/Logout";
 
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
@@ -62,3 +61,13 @@ export default function Home() {
     </>
   );
 }
+
+function Logout() {
+  return (
+    auth.currentUser && (
+      <button className="text-iosBlue block" onClick={() => auth.signOut()}>
+        Sign Out
+      </button>
+    )
+  );
+};
