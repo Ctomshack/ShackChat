@@ -78,7 +78,7 @@ const RegisterUser = () => {
                           type="password"
                           ref={passwordRef}
                           autoComplete="current-password"
-                          placeholder="must contain 5+ letters & a symbol (!@#)"
+                          placeholder="*must contain 5+ letters and a symbol (!@#)"
                           required
                           className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-google focus:outline-none focus:ring-google sm:text-sm"
                         />
