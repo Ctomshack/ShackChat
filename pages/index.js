@@ -137,7 +137,7 @@ function ChatMessage(props) {
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
   return (<>
-    <div className={`message ${messageClass} flex-wrap break-all`}>
+    <div className={`message ${messageClass} flex-wrap`}>
       {/* <p className=''>{props.message.name[0]}</p> */}
       <p>{text}</p>
     </div>

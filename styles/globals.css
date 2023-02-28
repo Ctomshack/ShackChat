@@ -74,6 +74,7 @@ p {
   flex-direction: row-reverse;
   /* align-items: flex-end; */
   align-self: flex-end;
+  
 }
 
 .sent p {
@@ -84,5 +85,6 @@ p {
 .received p {
   background: #e5e5ea;
   color: black;
+  
 }
 
