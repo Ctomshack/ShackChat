@@ -109,11 +109,11 @@ function ChatRoom() {
 
     </main>
 
-    <form onSubmit={sendMessage} className='h-[10vh] flex align-middle bg-header shadow-lg'>
+    <form onSubmit={sendMessage} className='h-[10vh] flex align-middle bg-header shadow-lg fixed bottom-0 w-full px-8 md:px-12'>
 
-      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Type message here" className='mx-8 md:mx-12 my-4 block overflow-x-hidden w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-google focus:outline-none focus:ring-google sm:text-sm' />
+      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Type message here" className='mx-2 my-4 block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-google focus:outline-none focus:ring-google sm:text-sm' />
 
-      {/* <button type="submit" disabled={!formValue} className='invisible'></button> */}
+      <button type="submit" disabled={!formValue} className='bg-iosBlue cursor-pointer text-white my-4 rounded-md py-2 px-4 text-center align-middle'>Send</button>
 
     </form>
   </>)
