@@ -19,13 +19,13 @@ import RegisterUser from '@/components/RegisterUser';
 import Auth from '@/components/Auth';
 
 firebase.initializeApp({
-  apiKey: "AIzaSyAum40V1RbfH_Gu0HRe51DLuOqbhZ4z40c",
-  authDomain: "real-time-chat-app-b9cff.firebaseapp.com",
-  projectId: "real-time-chat-app-b9cff",
-  storageBucket: "real-time-chat-app-b9cff.appspot.com",
-  messagingSenderId: "18308909175",
-  appId: "1:18308909175:web:575e2347faa85a032b1e72",
-  measurementId: "G-7BR18704EF"
+  apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_G_TAG
 })
 
 const auth = firebase.auth();
@@ -41,6 +41,12 @@ export default function Home() {
   // const [user] = useAuthState(auth);
 
   return (
+    <>
+     <Head>
+        <title>RealChat-demo</title>
+        <meta name="description" content="A real-time chat app built with next.js, firebase, and tailwindcss. Bootstrapped with create-next-app." />
+        <link rel="icon" href="/bubble.ico" />
+      </Head>
     <div className="App flex h-[100vh] flex-col">
       <header className='flex flex-row justify-between px-8 py-6 bg-header text-gray-700 shadow-lg fixed w-full top-0 z-20'>
       <h3 className="text-gray">
@@ -61,6 +67,7 @@ export default function Home() {
       </section>
 
     </div>
+    </>
   );
 }
 
@@ -75,7 +82,7 @@ function SignOut() {
 
 
 function ChatRoom() {
-  const dummy = useRef();
+  const formtext = useRef();
   const messagesRef = firestore.collection('messages');
   const query = messagesRef.orderBy('createdAt').limit(25);
 
@@ -97,7 +104,7 @@ function ChatRoom() {
     })
 
     setFormValue('');
-    dummy.current.scrollIntoView({ behavior: 'smooth' });
+    formtext.current.scrollIntoView({ behavior: 'smooth' });
   }
 
   return (<>
@@ -105,7 +112,7 @@ function ChatRoom() {
 
       {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
 
-      <span ref={dummy}></span>
+      <span ref={formtext}></span>
 
     </main>
 
