@@ -1,23 +1,17 @@
-import Head from 'next/head'
-import { Inter } from 'next/font/google'
+import React, { useRef, useState } from "react";
+import Head from "next/head";
+import { Inter } from "next/font/google";
 
+import Login from "@/components/Login";
+import { useUserContext } from "@/context/userContext";
+import Auth from "@/components/Auth";
+import ChatRoom from "@/components/ChatRoom";
+import Logout from "@/components/Logout";
 
-
-import React, { useRef, useState } from 'react';
-// import './App.css';
-
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/firestore';
-import 'firebase/compat/auth';
-import 'firebase/compat/analytics';
-
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
-import Login from '@/components/Login';
-import { useUserContext } from '@/context/userContext';
-import RegisterUser from '@/components/RegisterUser';
-import Auth from '@/components/Auth';
-import ChatMessage from '@/components/ChatMessage';
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
+import "firebase/compat/auth";
+import "firebase/compat/analytics";
 
 firebase.initializeApp({
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
@@ -26,111 +20,45 @@ firebase.initializeApp({
   storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
   messagingSenderId: process.env.NEXT_PUBLIC_SENDER_ID,
   appId: process.env.NEXT_PUBLIC_APP_ID,
-  measurementId: process.env.NEXT_PUBLIC_G_TAG
-})
+  measurementId: process.env.NEXT_PUBLIC_G_TAG,
+});
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 // const analytics = firebase.analytics();
 
-
-
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const { loading, error, user } = useUserContext()
+  const { loading, error, user } = useUserContext();
   // const [user] = useAuthState(auth);
 
   return (
     <>
-     <Head>
+      <Head>
         <title>RealChat-demo</title>
-        <meta name="description" content="A real-time chat app built with next.js, firebase, and tailwindcss. Bootstrapped with create-next-app." />
+        <meta
+          name="description"
+          content="A real-time chat app built with next.js, firebase, and tailwindcss. Bootstrapped with create-next-app."
+        />
         <link rel="icon" href="/bubble.ico" />
       </Head>
-    <div className="App flex h-[100vh] flex-col">
-      <header className='flex flex-row justify-between px-8 py-6 bg-header text-gray-700 shadow-lg fixed w-full top-0 z-20'>
-      <h3 className="text-gray">
-                {"< "}
-                <span className="text-iosBlue font-bold">{"/"}</span>
-                <span className="text-gray-700">
-                  {" Chatroom.dev "}
-                </span>
-                <span>{" >"}</span>
-              </h3>
-        {/* <h1 className='font-semibold'>Chatroom App </h1> */}
-        <SignOut />
-      </header>
+      <div className="App flex h-[100vh] flex-col">
+        <header className="flex flex-row justify-between px-8 py-6 bg-header text-gray-700 shadow-lg fixed w-full top-0 z-20">
+          <h3 className="text-gray">
+            {"< "}
+            <span className="text-iosBlue font-bold">{"/"}</span>
+            <span className="text-gray-700">{" Chatroom.dev "}</span>
+            <span>{" >"}</span>
+          </h3>
+          <Logout />
+        </header>
 
-      <section id='chat-room-section' className=' my-4 mt-[10vh]'>
-      {error && <p className="error font-red-500">{error}</p>}
-        {user ? <ChatRoom /> : <Auth />}
-      </section>
-
-    </div>
+        <section id="chat-room-section" className=" my-4 mt-[10vh]">
+          {error && <p className="error font-red-500">{error}</p>}
+          {user ? <ChatRoom /> : <Auth />}
+        </section>
+      </div>
     </>
   );
 }
-
-<Login />
-
-
-function SignOut() {
-  return auth.currentUser && (
-    <button className="text-iosBlue block" onClick={() => auth.signOut()}>Sign Out</button>
-  )
-}
-
-
-function ChatRoom() {
-  const textValue = useRef();
-  const messagesRef = firestore.collection('messages');
-  const messagesQuery = messagesRef.orderBy('createdAt');
-
-  const [messages] = useCollectionData(messagesQuery, { idField: 'id' });
-
-  const [formValue, setFormValue] = useState('');
-
-  // console.log(messages)
-  // console.log(auth.currentUser)
-
-  const sendMessage = async (e) => {
-    e.preventDefault();
-
-    const { uid, photoURL } = auth.currentUser;
-    const displayName = auth.currentUser._delegate.displayName.split(' ')[0]
-    // console.log(displayName)
-
-    await messagesRef.add({
-      text: formValue,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-      uid,
-      photoURL,
-      displayName
-    })
-
-    setFormValue('');
-    textValue.current.scrollIntoView({ behavior: 'smooth' });
-  }
-
-  // messages.map((msg => console.log(msg)))
-  return (<>
-    <main className='chat-room h-[80vh] overflow-y-scroll px-4 md:px-8 touch-pan-y'>
-
-      {messages && messages.map(message => <ChatMessage key={message.createdAt} message={message} />)}
-
-      <span ref={textValue}></span>
-
-    </main>
-
-    <form onSubmit={sendMessage} className='h-[10vh] flex align-middle bg-header shadow-lg fixed bottom-0 w-full px-8 md:px-12'>
-
-      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Type message here" className='mx-2 my-4 block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-google focus:outline-none focus:ring-google sm:text-sm' />
-
-      <button type="submit" disabled={!formValue} className='bg-iosBlue cursor-pointer text-white rounded-md my-4 sm:my-6 py-2 px-4 text-center align-middle'>Send</button>
-
-    </form>
-  </>)
-}
-
-

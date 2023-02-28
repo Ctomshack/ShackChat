@@ -9,13 +9,13 @@ import 'firebase/compat/analytics';
 import { useUserContext } from "@/context/userContext";
 
 firebase.initializeApp({
-  apiKey: "AIzaSyAum40V1RbfH_Gu0HRe51DLuOqbhZ4z40c",
-  authDomain: "real-time-chat-app-b9cff.firebaseapp.com",
-  projectId: "real-time-chat-app-b9cff",
-  storageBucket: "real-time-chat-app-b9cff.appspot.com",
-  messagingSenderId: "18308909175",
-  appId: "1:18308909175:web:575e2347faa85a032b1e72",
-  measurementId: "G-7BR18704EF"
+  apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_G_TAG
 })
 
 const auth = firebase.auth();
