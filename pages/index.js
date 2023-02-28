@@ -82,7 +82,7 @@ function SignOut() {
 
 
 function ChatRoom() {
-  const dummy = useRef();
+  const textValue = useRef();
   const messagesRef = firestore.collection('messages');
   const query = messagesRef.orderBy('createdAt');
 
@@ -91,21 +91,25 @@ function ChatRoom() {
   const [formValue, setFormValue] = useState('');
 
   // console.log(messages)
+  // console.log(auth.currentUser)
 
   const sendMessage = async (e) => {
     e.preventDefault();
 
     const { uid, photoURL } = auth.currentUser;
+    const displayName = auth.currentUser._delegate.displayName.split(' ')[0]
+    // console.log(displayName)
 
     await messagesRef.add({
       text: formValue,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
-      photoURL
+      photoURL,
+      displayName
     })
 
     setFormValue('');
-    dummy.current.scrollIntoView({ behavior: 'smooth' });
+    textValue.current.scrollIntoView({ behavior: 'smooth' });
   }
 
   // messages.map((msg => console.log(msg)))
@@ -114,7 +118,7 @@ function ChatRoom() {
 
       {messages && messages.map(msg => <ChatMessage key={msg.createdAt} message={msg} />)}
 
-      <span ref={dummy}></span>
+      <span ref={textValue}></span>
 
     </main>
 
@@ -130,16 +134,20 @@ function ChatRoom() {
 
 
 function ChatMessage(props) {
-  const { text, uid, photoURL } = props.message;
+  const { text, uid, photoURL, displayName } = props.message;
 
-  // console.log(props.message)
+  console.log(props.message)
 
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
   return (<>
-    <div className={`message ${messageClass} flex-wrap`}>
-      {/* <p className=''>{props.message.name[0]}</p> */}
-      <p>{text}</p>
+    <div className={`message ${messageClass} `}>
+      <div className={` ${messageClass} w-full message flex-row gap-0.5`}>
+
+      <div className={`text-sm text-gray-600 self-middle ${messageClass} px-2`}>{displayName}</div>
+      <p className=''>{text}</p>
+      </div>
+
     </div>
   </>)
 }
