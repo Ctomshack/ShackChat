@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Head from "next/head";
 import { Inter } from "next/font/google";
 
@@ -32,23 +32,26 @@ export default function Home() {
   const { loading, error, user } = useUserContext();
   // const [user] = useAuthState(auth);
 
-  return (
-    <>
+    // let username = user.displayName.split(' ')[0];
+
+    
+    return (
+      <>
       <Head>
         <title>RealChat-demo</title>
         <meta
           name="description"
           content="A real-time chat app built with next.js, firebase, and tailwindcss. Bootstrapped with create-next-app."
-        />
+          />
         <link rel="icon" href="/bubble.ico" />
       </Head>
       <div className="App flex h-[100vh] flex-col">
         <header className="flex flex-row justify-between px-8 py-6 bg-header text-gray-700 shadow-lg fixed w-full top-0 z-20">
           <h3 className="text-gray">
-            {"< "}
-            <span className="text-iosBlue font-bold">{"/"}</span>
-            <span className="text-gray-700">{" Chatroom.dev "}</span>
-            <span>{" >"}</span>
+          {"< "}
+          <span className="text-iosBlue font-bold">{"/"}</span>
+          <span className="text-gray-700">{" ChatroomDemo "}</span>
+          <span>{" >"}</span>
           </h3>
           <Logout />
         </header>
