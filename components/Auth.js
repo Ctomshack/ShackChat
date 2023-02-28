@@ -13,7 +13,7 @@ const Auth = () => {
   return (
     <div>
         {!index ? <Login /> : <RegisterUser />}
-        <p onClick={toggleIndex} className=" m-auto text-middle text-center text-sm text-gray-600">
+        <p onClick={toggleIndex} className=" m-auto text-middle text-center text-sm text-gray-600 -mt-10">
         {!index ?  
         <>
             <span>Or{' '}</span>
