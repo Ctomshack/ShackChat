@@ -9,7 +9,7 @@ body {
   margin: 0;
   font-family: 'Roboto Mono', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    position: relative;
+    /* position: relative;
     overflow-y:scroll;
     overflow-x: hidden;
     height: 100%;
@@ -17,7 +17,7 @@ body {
     left: 0;
     top: 0;
     z-index: -1;
-    background-position: 50% 50%;
+    background-position: 50% 50%; */
 
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
@@ -40,6 +40,19 @@ body {
 main { 
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+}
+
+main::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+main::-webkit-scrollbar-track {
+  background: #f1f1f2;
+}
+
+main::-webkit-scrollbar-thumb {
+  background: #3378f6;
 }
 
 p {
