@@ -53,11 +53,11 @@ export default function Home() {
                 {"< "}
                 <span className="text-iosBlue font-bold">{"/"}</span>
                 <span className="text-gray-700">
-                  {" Chris.dev "}
+                  {" Chatroom.dev "}
                 </span>
                 <span>{" >"}</span>
               </h3>
-        <h1 className='font-semibold'>Chatroom App </h1>
+        {/* <h1 className='font-semibold'>Chatroom App </h1> */}
         <SignOut />
       </header>
 
