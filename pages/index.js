@@ -82,14 +82,15 @@ function SignOut() {
 
 
 function ChatRoom() {
-  const formtext = useRef();
+  const dummy = useRef();
   const messagesRef = firestore.collection('messages');
-  const query = messagesRef.orderBy('createdAt').limit(25);
+  const query = messagesRef.orderBy('createdAt');
 
   const [messages] = useCollectionData(query, { idField: 'id' });
 
   const [formValue, setFormValue] = useState('');
 
+  // console.log(messages)
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -104,15 +105,16 @@ function ChatRoom() {
     })
 
     setFormValue('');
-    formtext.current.scrollIntoView({ behavior: 'smooth' });
+    dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
 
+  // messages.map((msg => console.log(msg)))
   return (<>
     <main className='chat-room h-[80vh] overflow-y-scroll px-4 md:px-8 touch-pan-y'>
 
-      {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
+      {messages && messages.map(msg => <ChatMessage key={msg.createdAt} message={msg} />)}
 
-      <span ref={formtext}></span>
+      <span ref={dummy}></span>
 
     </main>
 
@@ -130,12 +132,13 @@ function ChatRoom() {
 function ChatMessage(props) {
   const { text, uid, photoURL } = props.message;
 
-  // console.log(props)
+  // console.log(props.message)
 
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
   return (<>
     <div className={`message ${messageClass} flex-wrap break-all`}>
+      {/* <p className=''>{props.message.name[0]}</p> */}
       <p>{text}</p>
     </div>
   </>)
