@@ -175,7 +175,7 @@ export default function Login() {
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between">
+                  {/* <div className="flex items-center justify-between">
                     <div className="flex items-center">
                       <input
                         id="remember-me"
@@ -199,7 +199,7 @@ export default function Login() {
                         Forgot your password?
                       </div>
                     </div>
-                  </div>
+                  </div> */}
 
                   <div>
                     <button
