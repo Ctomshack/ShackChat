@@ -126,7 +126,7 @@ function ChatRoom() {
 
       <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Type message here" className='mx-2 my-4 block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-google focus:outline-none focus:ring-google sm:text-sm' />
 
-      <button type="submit" disabled={!formValue} className='bg-iosBlue cursor-pointer text-white my-4 rounded-md py-2 px-4 text-center align-middle'>Send</button>
+      <button type="submit" disabled={!formValue} className='bg-iosBlue cursor-pointer text-white rounded-md my-6 py-2 px-4 text-center align-middle'>Send</button>
 
     </form>
   </>)
