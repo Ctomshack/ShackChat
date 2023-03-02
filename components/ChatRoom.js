@@ -60,7 +60,7 @@ const ChatRoom = () => {
 
   return (
     <>
-      <main className="chat-room h-full overflow-y-scroll px-4 py-4 touch-pan-y">
+      <main className="chat-room h-[95vh] overflow-y-scroll px-4 pt-4 pb-6 touch-pan-y">
         {messages &&
           messages.map((message) => (
             <ChatMessage key={message.createdAt} message={message} />

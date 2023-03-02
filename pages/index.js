@@ -50,7 +50,7 @@ export default function Home() {
       {user ? 
       <>
       {/* <SideBar /> */}
-        <header className="flex justify-between px-8 py-6 bg-sidebar border-b border-gray-700 text-gray-700 shadow-lg fixed w-full top-0 z-20">
+        <header className="flex justify-between px-8 py-2 md:py-6 bg-sidebar border-b border-gray-700 text-gray-700 shadow-lg fixed w-full top-0 z-20">
           <Welcome /> 
           <Logout /> 
         </header>
