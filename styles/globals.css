@@ -58,6 +58,7 @@ main::-webkit-scrollbar-track {
 main::-webkit-scrollbar-thumb {
   background: #19a873;
 }
+ 
 
 p {
   max-width: 50%;
