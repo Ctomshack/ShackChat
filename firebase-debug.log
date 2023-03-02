@@ -1,0 +1,691 @@
+[debug] [2023-03-02T22:58:34.170Z] ----------------------------------------------------------------------
+[debug] [2023-03-02T22:58:34.171Z] Command:       /opt/homebrew/Cellar/node/18.4.0/bin/node /opt/homebrew/bin/firebase deploy --only functions
+[debug] [2023-03-02T22:58:34.172Z] CLI Version:   11.24.0
+[debug] [2023-03-02T22:58:34.172Z] Platform:      darwin
+[debug] [2023-03-02T22:58:34.172Z] Node Version:  v18.4.0
+[debug] [2023-03-02T22:58:34.172Z] Time:          Thu Mar 02 2023 17:58:34 GMT-0500 (Eastern Standard Time)
+[debug] [2023-03-02T22:58:34.172Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-02T22:58:34.213Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-02T22:58:34.213Z] > authorizing via signed-in user (ctomshack15@gmail.com)
+[debug] [2023-03-02T22:58:34.213Z] [iam] checking project real-time-chat-app-b9cff for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-03-02T22:58:34.214Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/real-time-chat-app-b9cff:testIamPermissions [none]
+[debug] [2023-03-02T22:58:34.214Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/real-time-chat-app-b9cff:testIamPermissions x-goog-quota-user=projects/real-time-chat-app-b9cff
+[debug] [2023-03-02T22:58:34.214Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/real-time-chat-app-b9cff:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-03-02T22:58:34.423Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/real-time-chat-app-b9cff:testIamPermissions 200
+[debug] [2023-03-02T22:58:34.423Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/real-time-chat-app-b9cff:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-03-02T22:58:34.424Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/real-time-chat-app-b9cff/serviceAccounts/real-time-chat-app-b9cff@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-03-02T22:58:34.424Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/real-time-chat-app-b9cff/serviceAccounts/real-time-chat-app-b9cff@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-03-02T22:58:34.662Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/real-time-chat-app-b9cff/serviceAccounts/real-time-chat-app-b9cff@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-03-02T22:58:34.662Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/real-time-chat-app-b9cff/serviceAccounts/real-time-chat-app-b9cff@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'real-time-chat-app-b9cff'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] ✔  functions: Finished running predeploy script. 
+[debug] [2023-03-02T22:58:36.256Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff [none]
+[debug] [2023-03-02T22:58:36.529Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff 200
+[debug] [2023-03-02T22:58:36.529Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff {"projectId":"real-time-chat-app-b9cff","projectNumber":"18308909175","displayName":"shack-chat-demo","name":"projects/real-time-chat-app-b9cff","resources":{"hostingSite":"real-time-chat-app-b9cff"},"state":"ACTIVE","etag":"1_eeb75f86-653d-4de5-b07d-17115fc73b46"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-03-02T22:58:36.532Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-03-02T22:58:36.532Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/real-time-chat-app-b9cff
+[debug] [2023-03-02T22:58:36.534Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-03-02T22:58:36.534Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/real-time-chat-app-b9cff
+[debug] [2023-03-02T22:58:36.535Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/cloudbuild.googleapis.com [none]
+[debug] [2023-03-02T22:58:36.536Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/cloudbuild.googleapis.com x-goog-quota-user=projects/real-time-chat-app-b9cff
+[debug] [2023-03-02T22:58:36.536Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/artifactregistry.googleapis.com [none]
+[debug] [2023-03-02T22:58:36.537Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/artifactregistry.googleapis.com x-goog-quota-user=projects/real-time-chat-app-b9cff
+[debug] [2023-03-02T22:58:36.826Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/runtimeconfig.googleapis.com 200
+[debug] [2023-03-02T22:58:36.827Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-03-02T22:58:36.840Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/cloudbuild.googleapis.com 200
+[debug] [2023-03-02T22:58:36.840Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-03-02T22:58:36.871Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/cloudfunctions.googleapis.com 200
+[debug] [2023-03-02T22:58:36.871Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-03-02T22:58:36.879Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/artifactregistry.googleapis.com 200
+[debug] [2023-03-02T22:58:36.880Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-03-02T22:58:36.880Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff/adminSdkConfig [none]
+[debug] [2023-03-02T22:58:37.126Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff/adminSdkConfig 200
+[debug] [2023-03-02T22:58:37.127Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff/adminSdkConfig {"projectId":"real-time-chat-app-b9cff","storageBucket":"real-time-chat-app-b9cff.appspot.com"}
+[debug] [2023-03-02T22:58:37.129Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff/configs [none]
+[debug] [2023-03-02T22:58:37.336Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff/configs 200
+[debug] [2023-03-02T22:58:37.336Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff/configs {}
+[debug] [2023-03-02T22:58:37.339Z] Validating nodejs source
+[debug] [2023-03-02T22:58:37.835Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.0.0"
+  },
+  "private": true
+}
+[debug] [2023-03-02T22:58:37.835Z] Building nodejs source
+[debug] [2023-03-02T22:58:37.836Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-03-02T22:58:37.842Z] Found firebase-functions binary at '/Users/christomshack/Desktop/Fullstack/SideProjects/realtime-chat-app-firebase/functions/node_modules/.bin/firebase-functions'
+[debug] [2023-03-02T22:58:37.951Z] Serving at port 8012
+
+[debug] [2023-03-02T22:58:38.073Z] Got response from /__/functions.yaml {"endpoints":{"detectBannedUsers":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.create","eventFilters":{"resource":"projects/real-time-chat-app-b9cff/databases/(default)/documents/messages"},"retry":false},"labels":{},"entryPoint":"detectBannedUsers"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-03-02T22:58:38.077Z] shutdown requested via /__/quitquitquit
+
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged /Users/christomshack/Desktop/Fullstack/SideProjects/realtime-chat-app-firebase/functions (140.58 KB) for uploading 
+[debug] [2023-03-02T22:58:38.103Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/-/functions [none]
+[debug] [2023-03-02T22:58:38.682Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/-/functions 200
+[debug] [2023-03-02T22:58:38.683Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/-/functions {}
+[debug] [2023-03-02T22:58:38.684Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/real-time-chat-app-b9cff/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2023-03-02T22:58:39.193Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/real-time-chat-app-b9cff/locations/-/functions 200
+[debug] [2023-03-02T22:58:39.194Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/real-time-chat-app-b9cff/locations/-/functions {}
+[debug] [2023-03-02T22:58:39.204Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff [none]
+[debug] [2023-03-02T22:58:39.474Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff 200
+[debug] [2023-03-02T22:58:39.474Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff {"projectId":"real-time-chat-app-b9cff","projectNumber":"18308909175","displayName":"shack-chat-demo","name":"projects/real-time-chat-app-b9cff","resources":{"hostingSite":"real-time-chat-app-b9cff"},"state":"ACTIVE","etag":"1_eeb75f86-653d-4de5-b07d-17115fc73b46"}
+[debug] [2023-03-02T22:58:39.477Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2023-03-02T22:58:39.478Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2023-03-02T22:58:48.922Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2023-03-02T22:58:48.923Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/e24cfceb-27e3-4ee3-a7c0-c4affbf33192.zip?GoogleAccessId=service-18308909175@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677799728&Signature=ae7VZ83C4a3b%2F1MLDjjy66rxip1qPagatRvPY1hNkLLU7CcN3oiO31xCiCMwrrlbKTKyyGVe10Lvc8s4vA42QfuMtVJj5z1gh%2F9K1zF5uZNGCCFgnaV7WZK2U1fhVLIsCIKvwHDJN3EfCXfc%2BM223DVnaqo5Z6jzn8KWEYcOyvOGd76jdsMPLnxbKIP8Lq93vQCq0WiQWtff7a29R88TanSaHu4BVG7kYxrnnYBzPFTzmdFGwp8AgXTKnaFOLSf57OoC3WgBsck%2BOZUlHXR9SY%2F4WFfLXCxJEJYvZGZYSQ7H1wwbboiVdLeIsVnlhOoJ3YT10VYg4ddDN37TXYYz2g%3D%3D"}
+[debug] [2023-03-02T22:58:48.925Z] >>> [apiv2][query] PUT https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/e24cfceb-27e3-4ee3-a7c0-c4affbf33192.zip GoogleAccessId=service-18308909175%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1677799728&Signature=ae7VZ83C4a3b%2F1MLDjjy66rxip1qPagatRvPY1hNkLLU7CcN3oiO31xCiCMwrrlbKTKyyGVe10Lvc8s4vA42QfuMtVJj5z1gh%2F9K1zF5uZNGCCFgnaV7WZK2U1fhVLIsCIKvwHDJN3EfCXfc%2BM223DVnaqo5Z6jzn8KWEYcOyvOGd76jdsMPLnxbKIP8Lq93vQCq0WiQWtff7a29R88TanSaHu4BVG7kYxrnnYBzPFTzmdFGwp8AgXTKnaFOLSf57OoC3WgBsck%2BOZUlHXR9SY%2F4WFfLXCxJEJYvZGZYSQ7H1wwbboiVdLeIsVnlhOoJ3YT10VYg4ddDN37TXYYz2g%3D%3D
+[debug] [2023-03-02T22:58:48.925Z] >>> [apiv2][body] PUT https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/e24cfceb-27e3-4ee3-a7c0-c4affbf33192.zip [stream]
+[debug] [2023-03-02T22:58:49.371Z] <<< [apiv2][status] PUT https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/e24cfceb-27e3-4ee3-a7c0-c4affbf33192.zip 200
+[debug] [2023-03-02T22:58:49.372Z] <<< [apiv2][body] PUT https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/e24cfceb-27e3-4ee3-a7c0-c4affbf33192.zip [omitted]
+[info] ✔  functions: functions folder uploaded successfully 
+[info] i  functions: creating Node.js 16 function detectBannedUsers(us-central1)... 
+[debug] [2023-03-02T22:58:49.380Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/us-central1/functions [none]
+[debug] [2023-03-02T22:58:49.380Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/us-central1/functions {"name":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectBannedUsers","sourceUploadUrl":"https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/e24cfceb-27e3-4ee3-a7c0-c4affbf33192.zip?GoogleAccessId=service-18308909175@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677799728&Signature=ae7VZ83C4a3b%2F1MLDjjy66rxip1qPagatRvPY1hNkLLU7CcN3oiO31xCiCMwrrlbKTKyyGVe10Lvc8s4vA42QfuMtVJj5z1gh%2F9K1zF5uZNGCCFgnaV7WZK2U1fhVLIsCIKvwHDJN3EfCXfc%2BM223DVnaqo5Z6jzn8KWEYcOyvOGd76jdsMPLnxbKIP8Lq93vQCq0WiQWtff7a29R88TanSaHu4BVG7kYxrnnYBzPFTzmdFGwp8AgXTKnaFOLSf57OoC3WgBsck%2BOZUlHXR9SY%2F4WFfLXCxJEJYvZGZYSQ7H1wwbboiVdLeIsVnlhOoJ3YT10VYg4ddDN37TXYYz2g%3D%3D","entryPoint":"detectBannedUsers","runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"3570ef83bd795be62c17de2cd37fcec5317aa612"},"eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.create","resource":"projects/real-time-chat-app-b9cff/databases/(default)/documents/messages"},"minInstances":null,"maxInstances":null,"ingressSettings":null,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"real-time-chat-app-b9cff\",\"storageBucket\":\"real-time-chat-app-b9cff.appspot.com\"}","GCLOUD_PROJECT":"real-time-chat-app-b9cff","EVENTARC_CLOUD_EVENT_SOURCE":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectBannedUsers"},"serviceAccountEmail":null,"availableMemoryMb":null,"timeout":null,"vpcConnector":null,"vpcConnectorEgressSettings":null}
+[debug] [2023-03-02T22:58:49.671Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/us-central1/functions 400
+[debug] [2023-03-02T22:58:49.672Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/us-central1/functions {"error":{"code":400,"message":"The request has errors","status":"INVALID_ARGUMENT","details":[{"@type":"type.googleapis.com/google.rpc.BadRequest","fieldViolations":[{"field":"event_trigger","description":"Expected value messages to match regular expression [^/]+/[^/]+(/[^/]+/[^/]+)*"}]}]}}
+[warn] ⚠  functions: failed to create function projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectBannedUsers 
+[error] Failed to create function projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectBannedUsers
+[debug] [2023-03-02T22:58:49.679Z] Total Function Deployment time: 297
+[debug] [2023-03-02T22:58:49.679Z] 1 Functions Deployed
+[debug] [2023-03-02T22:58:49.680Z] 1 Functions Errored
+[debug] [2023-03-02T22:58:49.680Z] 0 Function Deployments Aborted
+[debug] [2023-03-02T22:58:49.680Z] Average Function Deployment time: 296
+[info] 
+[info] Functions deploy had errors with the following functions:
+	detectBannedUsers(us-central1)
+[info] i  functions: cleaning up build files... 
+[debug] [2023-03-02T22:58:49.846Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/real-time-chat-app-b9cff/locations/us-central1/repositories/gcf-artifacts/packages/detect_banned_users [none]
+[debug] [2023-03-02T22:58:49.848Z] >>> [apiv2][query] GET https://us.gcr.io/v2/real-time-chat-app-b9cff/gcf/us-central1/tags/list [none]
+[debug] [2023-03-02T22:58:50.087Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/real-time-chat-app-b9cff/locations/us-central1/repositories/gcf-artifacts/packages/detect_banned_users 404
+[debug] [2023-03-02T22:58:50.088Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/real-time-chat-app-b9cff/locations/us-central1/repositories/gcf-artifacts/packages/detect_banned_users {"error":{"code":404,"message":"Package \"projects/real-time-chat-app-b9cff/locations/us-central1/repositories/gcf-artifacts/packages/detect_banned_users\" was not found.","status":"NOT_FOUND"}}
+[debug] [2023-03-02T22:58:51.073Z] <<< [apiv2][status] GET https://us.gcr.io/v2/real-time-chat-app-b9cff/gcf/us-central1/tags/list 200
+[debug] [2023-03-02T22:58:51.073Z] <<< [apiv2][body] GET https://us.gcr.io/v2/real-time-chat-app-b9cff/gcf/us-central1/tags/list {"child":[],"manifest":{},"name":"real-time-chat-app-b9cff/gcf/us-central1","tags":[]}
+[debug] [2023-03-02T22:58:51.074Z] Could not find image for function projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectBannedUsers
+[debug] [2023-03-02T22:58:51.074Z] Functions deploy failed.
+[debug] [2023-03-02T22:58:51.074Z] {
+  "endpoint": {
+    "id": "detectBannedUsers",
+    "project": "real-time-chat-app-b9cff",
+    "region": "us-central1",
+    "entryPoint": "detectBannedUsers",
+    "platform": "gcfv1",
+    "runtime": "nodejs16",
+    "eventTrigger": {
+      "eventType": "providers/cloud.firestore/eventTypes/document.create",
+      "retry": false,
+      "eventFilters": {
+        "resource": "projects/real-time-chat-app-b9cff/databases/(default)/documents/messages"
+      }
+    },
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    },
+    "serviceAccount": null,
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "vpc": null,
+    "environmentVariables": {
+      "FIREBASE_CONFIG": "{\"projectId\":\"real-time-chat-app-b9cff\",\"storageBucket\":\"real-time-chat-app-b9cff.appspot.com\"}",
+      "GCLOUD_PROJECT": "real-time-chat-app-b9cff",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectBannedUsers"
+    },
+    "codebase": "default",
+    "targetedByOnly": false,
+    "hash": "3570ef83bd795be62c17de2cd37fcec5317aa612"
+  },
+  "op": "create",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "context": {
+      "function": "projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectBannedUsers"
+    },
+    "exit": 1,
+    "message": "Failed to create function projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectBannedUsers",
+    "original": {
+      "name": "FirebaseError",
+      "children": [],
+      "context": {
+        "body": {
+          "error": {
+            "code": 400,
+            "message": "The request has errors",
+            "status": "INVALID_ARGUMENT",
+            "details": [
+              {
+                "@type": "type.googleapis.com/google.rpc.BadRequest",
+                "fieldViolations": [
+                  {
+                    "field": "event_trigger",
+                    "description": "Expected value messages to match regular expression [^/]+/[^/]+(/[^/]+/[^/]+)*"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "response": {
+          "statusCode": 400
+        }
+      },
+      "exit": 1,
+      "message": "HTTP Error: 400, The request has errors",
+      "status": 400
+    },
+    "status": 500
+  }
+}
+[debug] [2023-03-02T22:58:51.257Z] Error: Failed to create function detectBannedUsers in region us-central1
+    at /opt/homebrew/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:48:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Fabricator.createV1Function (/opt/homebrew/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:177:32)
+    at async Fabricator.createEndpoint (/opt/homebrew/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:129:13)
+    at async handle (/opt/homebrew/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:85:17)
+[error] 
+[error] Error: There was an error deploying functions
+[debug] [2023-03-02T23:00:05.754Z] ----------------------------------------------------------------------
+[debug] [2023-03-02T23:00:05.755Z] Command:       /opt/homebrew/Cellar/node/18.4.0/bin/node /opt/homebrew/bin/firebase deploy --only functions
+[debug] [2023-03-02T23:00:05.755Z] CLI Version:   11.24.0
+[debug] [2023-03-02T23:00:05.755Z] Platform:      darwin
+[debug] [2023-03-02T23:00:05.755Z] Node Version:  v18.4.0
+[debug] [2023-03-02T23:00:05.756Z] Time:          Thu Mar 02 2023 18:00:05 GMT-0500 (Eastern Standard Time)
+[debug] [2023-03-02T23:00:05.756Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-02T23:00:05.791Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-02T23:00:05.791Z] > authorizing via signed-in user (ctomshack15@gmail.com)
+[debug] [2023-03-02T23:00:05.792Z] [iam] checking project real-time-chat-app-b9cff for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-03-02T23:00:05.792Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/real-time-chat-app-b9cff:testIamPermissions [none]
+[debug] [2023-03-02T23:00:05.793Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/real-time-chat-app-b9cff:testIamPermissions x-goog-quota-user=projects/real-time-chat-app-b9cff
+[debug] [2023-03-02T23:00:05.793Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/real-time-chat-app-b9cff:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-03-02T23:00:05.990Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/real-time-chat-app-b9cff:testIamPermissions 200
+[debug] [2023-03-02T23:00:05.991Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/real-time-chat-app-b9cff:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-03-02T23:00:05.992Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/real-time-chat-app-b9cff/serviceAccounts/real-time-chat-app-b9cff@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-03-02T23:00:05.992Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/real-time-chat-app-b9cff/serviceAccounts/real-time-chat-app-b9cff@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-03-02T23:00:06.183Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/real-time-chat-app-b9cff/serviceAccounts/real-time-chat-app-b9cff@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-03-02T23:00:06.183Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/real-time-chat-app-b9cff/serviceAccounts/real-time-chat-app-b9cff@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'real-time-chat-app-b9cff'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] ✔  functions: Finished running predeploy script. 
+[debug] [2023-03-02T23:00:07.655Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff [none]
+[debug] [2023-03-02T23:00:07.902Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff 200
+[debug] [2023-03-02T23:00:07.902Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff {"projectId":"real-time-chat-app-b9cff","projectNumber":"18308909175","displayName":"shack-chat-demo","name":"projects/real-time-chat-app-b9cff","resources":{"hostingSite":"real-time-chat-app-b9cff"},"state":"ACTIVE","etag":"1_eeb75f86-653d-4de5-b07d-17115fc73b46"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-03-02T23:00:07.905Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-03-02T23:00:07.905Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/real-time-chat-app-b9cff
+[debug] [2023-03-02T23:00:07.907Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-03-02T23:00:07.907Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/real-time-chat-app-b9cff
+[debug] [2023-03-02T23:00:07.908Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/cloudbuild.googleapis.com [none]
+[debug] [2023-03-02T23:00:07.908Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/cloudbuild.googleapis.com x-goog-quota-user=projects/real-time-chat-app-b9cff
+[debug] [2023-03-02T23:00:07.909Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/artifactregistry.googleapis.com [none]
+[debug] [2023-03-02T23:00:07.909Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/artifactregistry.googleapis.com x-goog-quota-user=projects/real-time-chat-app-b9cff
+[debug] [2023-03-02T23:00:08.271Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/cloudfunctions.googleapis.com 200
+[debug] [2023-03-02T23:00:08.271Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-03-02T23:00:08.290Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/cloudbuild.googleapis.com 200
+[debug] [2023-03-02T23:00:08.290Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-03-02T23:00:08.344Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/artifactregistry.googleapis.com 200
+[debug] [2023-03-02T23:00:08.344Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-03-02T23:00:08.382Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/runtimeconfig.googleapis.com 200
+[debug] [2023-03-02T23:00:08.382Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-03-02T23:00:08.382Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff/adminSdkConfig [none]
+[debug] [2023-03-02T23:00:08.645Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff/adminSdkConfig 200
+[debug] [2023-03-02T23:00:08.645Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff/adminSdkConfig {"projectId":"real-time-chat-app-b9cff","storageBucket":"real-time-chat-app-b9cff.appspot.com"}
+[debug] [2023-03-02T23:00:08.647Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff/configs [none]
+[debug] [2023-03-02T23:00:08.895Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff/configs 200
+[debug] [2023-03-02T23:00:08.895Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff/configs {}
+[debug] [2023-03-02T23:00:08.898Z] Validating nodejs source
+[debug] [2023-03-02T23:00:09.270Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.0.0"
+  },
+  "private": true
+}
+[debug] [2023-03-02T23:00:09.270Z] Building nodejs source
+[debug] [2023-03-02T23:00:09.271Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-03-02T23:00:09.276Z] Found firebase-functions binary at '/Users/christomshack/Desktop/Fullstack/SideProjects/realtime-chat-app-firebase/functions/node_modules/.bin/firebase-functions'
+[debug] [2023-03-02T23:00:09.385Z] Serving at port 8301
+
+[debug] [2023-03-02T23:00:09.520Z] Got response from /__/functions.yaml {"endpoints":{"detectEvilUsers":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.create","eventFilters":{"resource":"projects/real-time-chat-app-b9cff/databases/(default)/documents/messages"},"retry":false},"labels":{},"entryPoint":"detectEvilUsers"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-03-02T23:00:09.524Z] shutdown requested via /__/quitquitquit
+
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged /Users/christomshack/Desktop/Fullstack/SideProjects/realtime-chat-app-firebase/functions (140.58 KB) for uploading 
+[debug] [2023-03-02T23:00:09.550Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/-/functions [none]
+[debug] [2023-03-02T23:00:10.127Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/-/functions 200
+[debug] [2023-03-02T23:00:10.127Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/-/functions {}
+[debug] [2023-03-02T23:00:10.129Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/real-time-chat-app-b9cff/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2023-03-02T23:00:10.638Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/real-time-chat-app-b9cff/locations/-/functions 200
+[debug] [2023-03-02T23:00:10.639Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/real-time-chat-app-b9cff/locations/-/functions {}
+[debug] [2023-03-02T23:00:10.648Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff [none]
+[debug] [2023-03-02T23:00:10.908Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff 200
+[debug] [2023-03-02T23:00:10.909Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff {"projectId":"real-time-chat-app-b9cff","projectNumber":"18308909175","displayName":"shack-chat-demo","name":"projects/real-time-chat-app-b9cff","resources":{"hostingSite":"real-time-chat-app-b9cff"},"state":"ACTIVE","etag":"1_eeb75f86-653d-4de5-b07d-17115fc73b46"}
+[debug] [2023-03-02T23:00:10.912Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2023-03-02T23:00:10.912Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2023-03-02T23:00:11.459Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2023-03-02T23:00:11.459Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/d1ea2139-9629-48e0-aec8-a0cc25f3dba7.zip?GoogleAccessId=service-18308909175@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677799811&Signature=UABYrSrS24%2BTWe7fma1mxHKe9P3gM0WTD51I5pliH5eL4c3rIaznu%2B5LiGf%2FouYJy21WQkCKzNMKRkuh9ZqVlz%2FEwOTrJK2TAKZt98gKWdCiYrKEolj8%2Fs%2BklN4qPdTgeUHyAzp4DKEvP02DfW8P2Sc6IKf1OpAV7lbQ%2Ba9kw0k7vAXaclFW48siMtJCu1FfME34EDpsereAlMkiL55dAXPQ8IoRDFtiPAVAbo0qwOvL4qNuatyUkLEl%2FMAluEoPoYQr46UiTHq3xqzDzKcktExURFTOkBceM7jOfD4T6xN7%2F0R4ZvJ%2BBl%2BDGY3v%2BtCQd%2BzY5wYh4nTQg1DjesvPGA%3D%3D"}
+[debug] [2023-03-02T23:00:11.460Z] >>> [apiv2][query] PUT https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/d1ea2139-9629-48e0-aec8-a0cc25f3dba7.zip GoogleAccessId=service-18308909175%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1677799811&Signature=UABYrSrS24%2BTWe7fma1mxHKe9P3gM0WTD51I5pliH5eL4c3rIaznu%2B5LiGf%2FouYJy21WQkCKzNMKRkuh9ZqVlz%2FEwOTrJK2TAKZt98gKWdCiYrKEolj8%2Fs%2BklN4qPdTgeUHyAzp4DKEvP02DfW8P2Sc6IKf1OpAV7lbQ%2Ba9kw0k7vAXaclFW48siMtJCu1FfME34EDpsereAlMkiL55dAXPQ8IoRDFtiPAVAbo0qwOvL4qNuatyUkLEl%2FMAluEoPoYQr46UiTHq3xqzDzKcktExURFTOkBceM7jOfD4T6xN7%2F0R4ZvJ%2BBl%2BDGY3v%2BtCQd%2BzY5wYh4nTQg1DjesvPGA%3D%3D
+[debug] [2023-03-02T23:00:11.460Z] >>> [apiv2][body] PUT https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/d1ea2139-9629-48e0-aec8-a0cc25f3dba7.zip [stream]
+[debug] [2023-03-02T23:00:11.848Z] <<< [apiv2][status] PUT https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/d1ea2139-9629-48e0-aec8-a0cc25f3dba7.zip 200
+[debug] [2023-03-02T23:00:11.848Z] <<< [apiv2][body] PUT https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/d1ea2139-9629-48e0-aec8-a0cc25f3dba7.zip [omitted]
+[info] ✔  functions: functions folder uploaded successfully 
+[info] i  functions: creating Node.js 16 function detectEvilUsers(us-central1)... 
+[debug] [2023-03-02T23:00:11.855Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/us-central1/functions [none]
+[debug] [2023-03-02T23:00:11.855Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/us-central1/functions {"name":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","sourceUploadUrl":"https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/d1ea2139-9629-48e0-aec8-a0cc25f3dba7.zip?GoogleAccessId=service-18308909175@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677799811&Signature=UABYrSrS24%2BTWe7fma1mxHKe9P3gM0WTD51I5pliH5eL4c3rIaznu%2B5LiGf%2FouYJy21WQkCKzNMKRkuh9ZqVlz%2FEwOTrJK2TAKZt98gKWdCiYrKEolj8%2Fs%2BklN4qPdTgeUHyAzp4DKEvP02DfW8P2Sc6IKf1OpAV7lbQ%2Ba9kw0k7vAXaclFW48siMtJCu1FfME34EDpsereAlMkiL55dAXPQ8IoRDFtiPAVAbo0qwOvL4qNuatyUkLEl%2FMAluEoPoYQr46UiTHq3xqzDzKcktExURFTOkBceM7jOfD4T6xN7%2F0R4ZvJ%2BBl%2BDGY3v%2BtCQd%2BzY5wYh4nTQg1DjesvPGA%3D%3D","entryPoint":"detectEvilUsers","runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"7e3457a5fe2139370f70693dd3ca2cfee57b78ab"},"eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.create","resource":"projects/real-time-chat-app-b9cff/databases/(default)/documents/messages"},"minInstances":null,"maxInstances":null,"ingressSettings":null,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"real-time-chat-app-b9cff\",\"storageBucket\":\"real-time-chat-app-b9cff.appspot.com\"}","GCLOUD_PROJECT":"real-time-chat-app-b9cff","EVENTARC_CLOUD_EVENT_SOURCE":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers"},"serviceAccountEmail":null,"availableMemoryMb":null,"timeout":null,"vpcConnector":null,"vpcConnectorEgressSettings":null}
+[debug] [2023-03-02T23:00:12.119Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/us-central1/functions 400
+[debug] [2023-03-02T23:00:12.119Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/us-central1/functions {"error":{"code":400,"message":"The request has errors","status":"INVALID_ARGUMENT","details":[{"@type":"type.googleapis.com/google.rpc.BadRequest","fieldViolations":[{"field":"event_trigger","description":"Expected value messages to match regular expression [^/]+/[^/]+(/[^/]+/[^/]+)*"}]}]}}
+[warn] ⚠  functions: failed to create function projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers 
+[error] Failed to create function projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers
+[debug] [2023-03-02T23:00:12.124Z] Total Function Deployment time: 268
+[debug] [2023-03-02T23:00:12.124Z] 1 Functions Deployed
+[debug] [2023-03-02T23:00:12.125Z] 1 Functions Errored
+[debug] [2023-03-02T23:00:12.125Z] 0 Function Deployments Aborted
+[debug] [2023-03-02T23:00:12.125Z] Average Function Deployment time: 267
+[info] 
+[info] Functions deploy had errors with the following functions:
+	detectEvilUsers(us-central1)
+[info] i  functions: cleaning up build files... 
+[debug] [2023-03-02T23:00:12.295Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/real-time-chat-app-b9cff/locations/us-central1/repositories/gcf-artifacts/packages/detect_evil_users [none]
+[debug] [2023-03-02T23:00:12.296Z] >>> [apiv2][query] GET https://us.gcr.io/v2/real-time-chat-app-b9cff/gcf/us-central1/tags/list [none]
+[debug] [2023-03-02T23:00:12.470Z] <<< [apiv2][status] GET https://us.gcr.io/v2/real-time-chat-app-b9cff/gcf/us-central1/tags/list 200
+[debug] [2023-03-02T23:00:12.470Z] <<< [apiv2][body] GET https://us.gcr.io/v2/real-time-chat-app-b9cff/gcf/us-central1/tags/list {"child":[],"manifest":{},"name":"real-time-chat-app-b9cff/gcf/us-central1","tags":[]}
+[debug] [2023-03-02T23:00:12.470Z] Could not find image for function projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers
+[debug] [2023-03-02T23:00:12.489Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/real-time-chat-app-b9cff/locations/us-central1/repositories/gcf-artifacts/packages/detect_evil_users 404
+[debug] [2023-03-02T23:00:12.489Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/real-time-chat-app-b9cff/locations/us-central1/repositories/gcf-artifacts/packages/detect_evil_users {"error":{"code":404,"message":"Package \"projects/real-time-chat-app-b9cff/locations/us-central1/repositories/gcf-artifacts/packages/detect_evil_users\" was not found.","status":"NOT_FOUND"}}
+[debug] [2023-03-02T23:00:12.490Z] Functions deploy failed.
+[debug] [2023-03-02T23:00:12.490Z] {
+  "endpoint": {
+    "id": "detectEvilUsers",
+    "project": "real-time-chat-app-b9cff",
+    "region": "us-central1",
+    "entryPoint": "detectEvilUsers",
+    "platform": "gcfv1",
+    "runtime": "nodejs16",
+    "eventTrigger": {
+      "eventType": "providers/cloud.firestore/eventTypes/document.create",
+      "retry": false,
+      "eventFilters": {
+        "resource": "projects/real-time-chat-app-b9cff/databases/(default)/documents/messages"
+      }
+    },
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    },
+    "serviceAccount": null,
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "vpc": null,
+    "environmentVariables": {
+      "FIREBASE_CONFIG": "{\"projectId\":\"real-time-chat-app-b9cff\",\"storageBucket\":\"real-time-chat-app-b9cff.appspot.com\"}",
+      "GCLOUD_PROJECT": "real-time-chat-app-b9cff",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers"
+    },
+    "codebase": "default",
+    "targetedByOnly": false,
+    "hash": "7e3457a5fe2139370f70693dd3ca2cfee57b78ab"
+  },
+  "op": "create",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "context": {
+      "function": "projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers"
+    },
+    "exit": 1,
+    "message": "Failed to create function projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers",
+    "original": {
+      "name": "FirebaseError",
+      "children": [],
+      "context": {
+        "body": {
+          "error": {
+            "code": 400,
+            "message": "The request has errors",
+            "status": "INVALID_ARGUMENT",
+            "details": [
+              {
+                "@type": "type.googleapis.com/google.rpc.BadRequest",
+                "fieldViolations": [
+                  {
+                    "field": "event_trigger",
+                    "description": "Expected value messages to match regular expression [^/]+/[^/]+(/[^/]+/[^/]+)*"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "response": {
+          "statusCode": 400
+        }
+      },
+      "exit": 1,
+      "message": "HTTP Error: 400, The request has errors",
+      "status": 400
+    },
+    "status": 500
+  }
+}
+[debug] [2023-03-02T23:00:12.649Z] Error: Failed to create function detectEvilUsers in region us-central1
+    at /opt/homebrew/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:48:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Fabricator.createV1Function (/opt/homebrew/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:177:32)
+    at async Fabricator.createEndpoint (/opt/homebrew/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:129:13)
+    at async handle (/opt/homebrew/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:85:17)
+[error] 
+[error] Error: There was an error deploying functions
+[debug] [2023-03-02T23:04:14.786Z] ----------------------------------------------------------------------
+[debug] [2023-03-02T23:04:14.786Z] Command:       /opt/homebrew/Cellar/node/18.4.0/bin/node /opt/homebrew/bin/firebase deploy --only functions
+[debug] [2023-03-02T23:04:14.787Z] CLI Version:   11.24.0
+[debug] [2023-03-02T23:04:14.787Z] Platform:      darwin
+[debug] [2023-03-02T23:04:14.787Z] Node Version:  v18.4.0
+[debug] [2023-03-02T23:04:14.787Z] Time:          Thu Mar 02 2023 18:04:14 GMT-0500 (Eastern Standard Time)
+[debug] [2023-03-02T23:04:14.788Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-02T23:04:14.825Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-02T23:04:14.825Z] > authorizing via signed-in user (ctomshack15@gmail.com)
+[debug] [2023-03-02T23:04:14.825Z] [iam] checking project real-time-chat-app-b9cff for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-03-02T23:04:14.826Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/real-time-chat-app-b9cff:testIamPermissions [none]
+[debug] [2023-03-02T23:04:14.826Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/real-time-chat-app-b9cff:testIamPermissions x-goog-quota-user=projects/real-time-chat-app-b9cff
+[debug] [2023-03-02T23:04:14.826Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/real-time-chat-app-b9cff:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-03-02T23:04:15.041Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/real-time-chat-app-b9cff:testIamPermissions 200
+[debug] [2023-03-02T23:04:15.041Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/real-time-chat-app-b9cff:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-03-02T23:04:15.042Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/real-time-chat-app-b9cff/serviceAccounts/real-time-chat-app-b9cff@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-03-02T23:04:15.042Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/real-time-chat-app-b9cff/serviceAccounts/real-time-chat-app-b9cff@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-03-02T23:04:15.230Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/real-time-chat-app-b9cff/serviceAccounts/real-time-chat-app-b9cff@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-03-02T23:04:15.230Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/real-time-chat-app-b9cff/serviceAccounts/real-time-chat-app-b9cff@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'real-time-chat-app-b9cff'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] ✔  functions: Finished running predeploy script. 
+[debug] [2023-03-02T23:04:16.860Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff [none]
+[debug] [2023-03-02T23:04:17.094Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff 200
+[debug] [2023-03-02T23:04:17.094Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff {"projectId":"real-time-chat-app-b9cff","projectNumber":"18308909175","displayName":"shack-chat-demo","name":"projects/real-time-chat-app-b9cff","resources":{"hostingSite":"real-time-chat-app-b9cff"},"state":"ACTIVE","etag":"1_eeb75f86-653d-4de5-b07d-17115fc73b46"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-03-02T23:04:17.096Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-03-02T23:04:17.096Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/real-time-chat-app-b9cff
+[debug] [2023-03-02T23:04:17.097Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-03-02T23:04:17.097Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/real-time-chat-app-b9cff
+[debug] [2023-03-02T23:04:17.098Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/cloudbuild.googleapis.com [none]
+[debug] [2023-03-02T23:04:17.098Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/cloudbuild.googleapis.com x-goog-quota-user=projects/real-time-chat-app-b9cff
+[debug] [2023-03-02T23:04:17.098Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/artifactregistry.googleapis.com [none]
+[debug] [2023-03-02T23:04:17.098Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/artifactregistry.googleapis.com x-goog-quota-user=projects/real-time-chat-app-b9cff
+[debug] [2023-03-02T23:04:17.429Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/cloudbuild.googleapis.com 200
+[debug] [2023-03-02T23:04:17.429Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-03-02T23:04:17.434Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/artifactregistry.googleapis.com 200
+[debug] [2023-03-02T23:04:17.434Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-03-02T23:04:17.435Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/runtimeconfig.googleapis.com 200
+[debug] [2023-03-02T23:04:17.435Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-03-02T23:04:17.448Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/cloudfunctions.googleapis.com 200
+[debug] [2023-03-02T23:04:17.448Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/real-time-chat-app-b9cff/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-03-02T23:04:17.449Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff/adminSdkConfig [none]
+[debug] [2023-03-02T23:04:17.684Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff/adminSdkConfig 200
+[debug] [2023-03-02T23:04:17.684Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff/adminSdkConfig {"projectId":"real-time-chat-app-b9cff","storageBucket":"real-time-chat-app-b9cff.appspot.com"}
+[debug] [2023-03-02T23:04:17.684Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff/configs [none]
+[debug] [2023-03-02T23:04:17.948Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff/configs 200
+[debug] [2023-03-02T23:04:17.949Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff/configs {}
+[debug] [2023-03-02T23:04:17.951Z] Validating nodejs source
+[debug] [2023-03-02T23:04:18.327Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.0.0"
+  },
+  "private": true
+}
+[debug] [2023-03-02T23:04:18.327Z] Building nodejs source
+[debug] [2023-03-02T23:04:18.327Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-03-02T23:04:18.332Z] Found firebase-functions binary at '/Users/christomshack/Desktop/Fullstack/SideProjects/realtime-chat-app-firebase/functions/node_modules/.bin/firebase-functions'
+[debug] [2023-03-02T23:04:18.441Z] Serving at port 8988
+
+[debug] [2023-03-02T23:04:18.583Z] Got response from /__/functions.yaml {"endpoints":{"detectEvilUsers":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.create","eventFilters":{"resource":"projects/real-time-chat-app-b9cff/databases/(default)/documents/messages/{msgId}"},"retry":false},"labels":{},"entryPoint":"detectEvilUsers"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-03-02T23:04:18.586Z] shutdown requested via /__/quitquitquit
+
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged /Users/christomshack/Desktop/Fullstack/SideProjects/realtime-chat-app-firebase/functions (140.68 KB) for uploading 
+[debug] [2023-03-02T23:04:18.612Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/-/functions [none]
+[debug] [2023-03-02T23:04:19.166Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/-/functions 200
+[debug] [2023-03-02T23:04:19.166Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/-/functions {}
+[debug] [2023-03-02T23:04:19.168Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/real-time-chat-app-b9cff/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2023-03-02T23:04:19.649Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/real-time-chat-app-b9cff/locations/-/functions 200
+[debug] [2023-03-02T23:04:19.649Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/real-time-chat-app-b9cff/locations/-/functions {}
+[debug] [2023-03-02T23:04:19.664Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff [none]
+[debug] [2023-03-02T23:04:19.941Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff 200
+[debug] [2023-03-02T23:04:19.941Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/real-time-chat-app-b9cff {"projectId":"real-time-chat-app-b9cff","projectNumber":"18308909175","displayName":"shack-chat-demo","name":"projects/real-time-chat-app-b9cff","resources":{"hostingSite":"real-time-chat-app-b9cff"},"state":"ACTIVE","etag":"1_eeb75f86-653d-4de5-b07d-17115fc73b46"}
+[debug] [2023-03-02T23:04:19.944Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2023-03-02T23:04:19.945Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2023-03-02T23:04:20.571Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2023-03-02T23:04:20.571Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/763e95b0-80b1-4615-a9ea-fd116cee5513.zip?GoogleAccessId=service-18308909175@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677800060&Signature=R4nQOuqgiGHTTjKfHM9Ay6zYzj3x00%2FAuwUp9cyASnE%2BjP211f6pwIWsSp%2FFNPc9a8LOfxwZOpqJ8gnQ9g%2Fdxs5igUbimc%2BxMLHued4tnUlPt9dQu9DME9Zg9QdkK2l7096U3NpHJTrYyMXWy%2FyKKzueF%2F%2BKdzUpqjyJvkQfYP4Xc6B97%2BDvubzpZ%2F%2Fvt76gCyh4nX9l1Vp0%2FEwxFCreUrNnlCSNWuittvkL5D2BmAhp%2B7O7xKptpBxFWtKtggjJzzYkwxNH5EObz2AJ79auRjCLlDKsm%2FzkJ5Dt5av5eyuG6DKhirfPyhjrTbHXxLF8ljWR%2Bdi8LizsTCCN4SxRHg%3D%3D"}
+[debug] [2023-03-02T23:04:20.573Z] >>> [apiv2][query] PUT https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/763e95b0-80b1-4615-a9ea-fd116cee5513.zip GoogleAccessId=service-18308909175%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1677800060&Signature=R4nQOuqgiGHTTjKfHM9Ay6zYzj3x00%2FAuwUp9cyASnE%2BjP211f6pwIWsSp%2FFNPc9a8LOfxwZOpqJ8gnQ9g%2Fdxs5igUbimc%2BxMLHued4tnUlPt9dQu9DME9Zg9QdkK2l7096U3NpHJTrYyMXWy%2FyKKzueF%2F%2BKdzUpqjyJvkQfYP4Xc6B97%2BDvubzpZ%2F%2Fvt76gCyh4nX9l1Vp0%2FEwxFCreUrNnlCSNWuittvkL5D2BmAhp%2B7O7xKptpBxFWtKtggjJzzYkwxNH5EObz2AJ79auRjCLlDKsm%2FzkJ5Dt5av5eyuG6DKhirfPyhjrTbHXxLF8ljWR%2Bdi8LizsTCCN4SxRHg%3D%3D
+[debug] [2023-03-02T23:04:20.573Z] >>> [apiv2][body] PUT https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/763e95b0-80b1-4615-a9ea-fd116cee5513.zip [stream]
+[debug] [2023-03-02T23:04:20.966Z] <<< [apiv2][status] PUT https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/763e95b0-80b1-4615-a9ea-fd116cee5513.zip 200
+[debug] [2023-03-02T23:04:20.966Z] <<< [apiv2][body] PUT https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/763e95b0-80b1-4615-a9ea-fd116cee5513.zip [omitted]
+[info] ✔  functions: functions folder uploaded successfully 
+[info] i  functions: creating Node.js 16 function detectEvilUsers(us-central1)... 
+[debug] [2023-03-02T23:04:20.974Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/us-central1/functions [none]
+[debug] [2023-03-02T23:04:20.974Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/us-central1/functions {"name":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","sourceUploadUrl":"https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/763e95b0-80b1-4615-a9ea-fd116cee5513.zip?GoogleAccessId=service-18308909175@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677800060&Signature=R4nQOuqgiGHTTjKfHM9Ay6zYzj3x00%2FAuwUp9cyASnE%2BjP211f6pwIWsSp%2FFNPc9a8LOfxwZOpqJ8gnQ9g%2Fdxs5igUbimc%2BxMLHued4tnUlPt9dQu9DME9Zg9QdkK2l7096U3NpHJTrYyMXWy%2FyKKzueF%2F%2BKdzUpqjyJvkQfYP4Xc6B97%2BDvubzpZ%2F%2Fvt76gCyh4nX9l1Vp0%2FEwxFCreUrNnlCSNWuittvkL5D2BmAhp%2B7O7xKptpBxFWtKtggjJzzYkwxNH5EObz2AJ79auRjCLlDKsm%2FzkJ5Dt5av5eyuG6DKhirfPyhjrTbHXxLF8ljWR%2Bdi8LizsTCCN4SxRHg%3D%3D","entryPoint":"detectEvilUsers","runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"074907ca9c7dddb340eecedaa5247a6a322cf25f"},"eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.create","resource":"projects/real-time-chat-app-b9cff/databases/(default)/documents/messages/{msgId}"},"minInstances":null,"maxInstances":null,"ingressSettings":null,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"real-time-chat-app-b9cff\",\"storageBucket\":\"real-time-chat-app-b9cff.appspot.com\"}","GCLOUD_PROJECT":"real-time-chat-app-b9cff","EVENTARC_CLOUD_EVENT_SOURCE":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers"},"serviceAccountEmail":null,"availableMemoryMb":null,"timeout":null,"vpcConnector":null,"vpcConnectorEgressSettings":null}
+[debug] [2023-03-02T23:04:21.522Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/us-central1/functions 200
+[debug] [2023-03-02T23:04:21.523Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/real-time-chat-app-b9cff/locations/us-central1/functions {"name":"operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.create","resource":"projects/real-time-chat-app-b9cff/databases/(default)/documents/messages/{msgId}"},"entryPoint":"detectEvilUsers","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"074907ca9c7dddb340eecedaa5247a6a322cf25f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/763e95b0-80b1-4615-a9ea-fd116cee5513.zip?GoogleAccessId=service-18308909175@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677800060&Signature=R4nQOuqgiGHTTjKfHM9Ay6zYzj3x00%2FAuwUp9cyASnE%2BjP211f6pwIWsSp%2FFNPc9a8LOfxwZOpqJ8gnQ9g%2Fdxs5igUbimc%2BxMLHued4tnUlPt9dQu9DME9Zg9QdkK2l7096U3NpHJTrYyMXWy%2FyKKzueF%2F%2BKdzUpqjyJvkQfYP4Xc6B97%2BDvubzpZ%2F%2Fvt76gCyh4nX9l1Vp0%2FEwxFCreUrNnlCSNWuittvkL5D2BmAhp%2B7O7xKptpBxFWtKtggjJzzYkwxNH5EObz2AJ79auRjCLlDKsm%2FzkJ5Dt5av5eyuG6DKhirfPyhjrTbHXxLF8ljWR%2Bdi8LizsTCCN4SxRHg%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"real-time-chat-app-b9cff\",\"storageBucket\":\"real-time-chat-app-b9cff.appspot.com\"}","GCLOUD_PROJECT":"real-time-chat-app-b9cff","EVENTARC_CLOUD_EVENT_SOURCE":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T23:04:21Z"}}
+[debug] [2023-03-02T23:04:21.525Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ [none]
+[debug] [2023-03-02T23:04:21.741Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ 200
+[debug] [2023-03-02T23:04:21.741Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ {"name":"operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.create","resource":"projects/real-time-chat-app-b9cff/databases/(default)/documents/messages/{msgId}"},"entryPoint":"detectEvilUsers","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"074907ca9c7dddb340eecedaa5247a6a322cf25f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/763e95b0-80b1-4615-a9ea-fd116cee5513.zip?GoogleAccessId=service-18308909175@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677800060&Signature=R4nQOuqgiGHTTjKfHM9Ay6zYzj3x00%2FAuwUp9cyASnE%2BjP211f6pwIWsSp%2FFNPc9a8LOfxwZOpqJ8gnQ9g%2Fdxs5igUbimc%2BxMLHued4tnUlPt9dQu9DME9Zg9QdkK2l7096U3NpHJTrYyMXWy%2FyKKzueF%2F%2BKdzUpqjyJvkQfYP4Xc6B97%2BDvubzpZ%2F%2Fvt76gCyh4nX9l1Vp0%2FEwxFCreUrNnlCSNWuittvkL5D2BmAhp%2B7O7xKptpBxFWtKtggjJzzYkwxNH5EObz2AJ79auRjCLlDKsm%2FzkJ5Dt5av5eyuG6DKhirfPyhjrTbHXxLF8ljWR%2Bdi8LizsTCCN4SxRHg%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"real-time-chat-app-b9cff\",\"storageBucket\":\"real-time-chat-app-b9cff.appspot.com\"}","GCLOUD_PROJECT":"real-time-chat-app-b9cff","EVENTARC_CLOUD_EVENT_SOURCE":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T23:04:21Z"}}
+[debug] [2023-03-02T23:04:22.245Z] [create-default-us-central1-detectEvilUsers] Retrying task index 0
+[debug] [2023-03-02T23:04:22.246Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ [none]
+[debug] [2023-03-02T23:04:22.461Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ 200
+[debug] [2023-03-02T23:04:22.461Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ {"name":"operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.create","resource":"projects/real-time-chat-app-b9cff/databases/(default)/documents/messages/{msgId}"},"entryPoint":"detectEvilUsers","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"074907ca9c7dddb340eecedaa5247a6a322cf25f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/763e95b0-80b1-4615-a9ea-fd116cee5513.zip?GoogleAccessId=service-18308909175@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677800060&Signature=R4nQOuqgiGHTTjKfHM9Ay6zYzj3x00%2FAuwUp9cyASnE%2BjP211f6pwIWsSp%2FFNPc9a8LOfxwZOpqJ8gnQ9g%2Fdxs5igUbimc%2BxMLHued4tnUlPt9dQu9DME9Zg9QdkK2l7096U3NpHJTrYyMXWy%2FyKKzueF%2F%2BKdzUpqjyJvkQfYP4Xc6B97%2BDvubzpZ%2F%2Fvt76gCyh4nX9l1Vp0%2FEwxFCreUrNnlCSNWuittvkL5D2BmAhp%2B7O7xKptpBxFWtKtggjJzzYkwxNH5EObz2AJ79auRjCLlDKsm%2FzkJ5Dt5av5eyuG6DKhirfPyhjrTbHXxLF8ljWR%2Bdi8LizsTCCN4SxRHg%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"real-time-chat-app-b9cff\",\"storageBucket\":\"real-time-chat-app-b9cff.appspot.com\"}","GCLOUD_PROJECT":"real-time-chat-app-b9cff","EVENTARC_CLOUD_EVENT_SOURCE":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T23:04:21Z"}}
+[debug] [2023-03-02T23:04:23.463Z] [create-default-us-central1-detectEvilUsers] Retrying task index 0
+[debug] [2023-03-02T23:04:23.465Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ [none]
+[debug] [2023-03-02T23:04:23.749Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ 200
+[debug] [2023-03-02T23:04:23.750Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ {"name":"operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.create","resource":"projects/real-time-chat-app-b9cff/databases/(default)/documents/messages/{msgId}"},"entryPoint":"detectEvilUsers","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"074907ca9c7dddb340eecedaa5247a6a322cf25f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/763e95b0-80b1-4615-a9ea-fd116cee5513.zip?GoogleAccessId=service-18308909175@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677800060&Signature=R4nQOuqgiGHTTjKfHM9Ay6zYzj3x00%2FAuwUp9cyASnE%2BjP211f6pwIWsSp%2FFNPc9a8LOfxwZOpqJ8gnQ9g%2Fdxs5igUbimc%2BxMLHued4tnUlPt9dQu9DME9Zg9QdkK2l7096U3NpHJTrYyMXWy%2FyKKzueF%2F%2BKdzUpqjyJvkQfYP4Xc6B97%2BDvubzpZ%2F%2Fvt76gCyh4nX9l1Vp0%2FEwxFCreUrNnlCSNWuittvkL5D2BmAhp%2B7O7xKptpBxFWtKtggjJzzYkwxNH5EObz2AJ79auRjCLlDKsm%2FzkJ5Dt5av5eyuG6DKhirfPyhjrTbHXxLF8ljWR%2Bdi8LizsTCCN4SxRHg%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"real-time-chat-app-b9cff\",\"storageBucket\":\"real-time-chat-app-b9cff.appspot.com\"}","GCLOUD_PROJECT":"real-time-chat-app-b9cff","EVENTARC_CLOUD_EVENT_SOURCE":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T23:04:21Z"}}
+[debug] [2023-03-02T23:04:25.752Z] [create-default-us-central1-detectEvilUsers] Retrying task index 0
+[debug] [2023-03-02T23:04:25.753Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ [none]
+[debug] [2023-03-02T23:04:25.979Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ 200
+[debug] [2023-03-02T23:04:25.979Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ {"name":"operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.create","resource":"projects/real-time-chat-app-b9cff/databases/(default)/documents/messages/{msgId}"},"entryPoint":"detectEvilUsers","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"074907ca9c7dddb340eecedaa5247a6a322cf25f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/763e95b0-80b1-4615-a9ea-fd116cee5513.zip?GoogleAccessId=service-18308909175@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677800060&Signature=R4nQOuqgiGHTTjKfHM9Ay6zYzj3x00%2FAuwUp9cyASnE%2BjP211f6pwIWsSp%2FFNPc9a8LOfxwZOpqJ8gnQ9g%2Fdxs5igUbimc%2BxMLHued4tnUlPt9dQu9DME9Zg9QdkK2l7096U3NpHJTrYyMXWy%2FyKKzueF%2F%2BKdzUpqjyJvkQfYP4Xc6B97%2BDvubzpZ%2F%2Fvt76gCyh4nX9l1Vp0%2FEwxFCreUrNnlCSNWuittvkL5D2BmAhp%2B7O7xKptpBxFWtKtggjJzzYkwxNH5EObz2AJ79auRjCLlDKsm%2FzkJ5Dt5av5eyuG6DKhirfPyhjrTbHXxLF8ljWR%2Bdi8LizsTCCN4SxRHg%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"real-time-chat-app-b9cff\",\"storageBucket\":\"real-time-chat-app-b9cff.appspot.com\"}","GCLOUD_PROJECT":"real-time-chat-app-b9cff","EVENTARC_CLOUD_EVENT_SOURCE":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T23:04:21Z"}}
+[debug] [2023-03-02T23:04:29.981Z] [create-default-us-central1-detectEvilUsers] Retrying task index 0
+[debug] [2023-03-02T23:04:29.982Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ [none]
+[debug] [2023-03-02T23:04:30.181Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ 200
+[debug] [2023-03-02T23:04:30.182Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ {"name":"operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.create","resource":"projects/real-time-chat-app-b9cff/databases/(default)/documents/messages/{msgId}"},"entryPoint":"detectEvilUsers","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"074907ca9c7dddb340eecedaa5247a6a322cf25f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/763e95b0-80b1-4615-a9ea-fd116cee5513.zip?GoogleAccessId=service-18308909175@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677800060&Signature=R4nQOuqgiGHTTjKfHM9Ay6zYzj3x00%2FAuwUp9cyASnE%2BjP211f6pwIWsSp%2FFNPc9a8LOfxwZOpqJ8gnQ9g%2Fdxs5igUbimc%2BxMLHued4tnUlPt9dQu9DME9Zg9QdkK2l7096U3NpHJTrYyMXWy%2FyKKzueF%2F%2BKdzUpqjyJvkQfYP4Xc6B97%2BDvubzpZ%2F%2Fvt76gCyh4nX9l1Vp0%2FEwxFCreUrNnlCSNWuittvkL5D2BmAhp%2B7O7xKptpBxFWtKtggjJzzYkwxNH5EObz2AJ79auRjCLlDKsm%2FzkJ5Dt5av5eyuG6DKhirfPyhjrTbHXxLF8ljWR%2Bdi8LizsTCCN4SxRHg%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"real-time-chat-app-b9cff\",\"storageBucket\":\"real-time-chat-app-b9cff.appspot.com\"}","GCLOUD_PROJECT":"real-time-chat-app-b9cff","EVENTARC_CLOUD_EVENT_SOURCE":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T23:04:21Z"}}
+[debug] [2023-03-02T23:04:38.183Z] [create-default-us-central1-detectEvilUsers] Retrying task index 0
+[debug] [2023-03-02T23:04:38.184Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ [none]
+[debug] [2023-03-02T23:04:38.372Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ 200
+[debug] [2023-03-02T23:04:38.373Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ {"name":"operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.create","resource":"projects/real-time-chat-app-b9cff/databases/(default)/documents/messages/{msgId}"},"entryPoint":"detectEvilUsers","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"074907ca9c7dddb340eecedaa5247a6a322cf25f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/763e95b0-80b1-4615-a9ea-fd116cee5513.zip?GoogleAccessId=service-18308909175@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677800060&Signature=R4nQOuqgiGHTTjKfHM9Ay6zYzj3x00%2FAuwUp9cyASnE%2BjP211f6pwIWsSp%2FFNPc9a8LOfxwZOpqJ8gnQ9g%2Fdxs5igUbimc%2BxMLHued4tnUlPt9dQu9DME9Zg9QdkK2l7096U3NpHJTrYyMXWy%2FyKKzueF%2F%2BKdzUpqjyJvkQfYP4Xc6B97%2BDvubzpZ%2F%2Fvt76gCyh4nX9l1Vp0%2FEwxFCreUrNnlCSNWuittvkL5D2BmAhp%2B7O7xKptpBxFWtKtggjJzzYkwxNH5EObz2AJ79auRjCLlDKsm%2FzkJ5Dt5av5eyuG6DKhirfPyhjrTbHXxLF8ljWR%2Bdi8LizsTCCN4SxRHg%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"real-time-chat-app-b9cff\",\"storageBucket\":\"real-time-chat-app-b9cff.appspot.com\"}","GCLOUD_PROJECT":"real-time-chat-app-b9cff","EVENTARC_CLOUD_EVENT_SOURCE":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T23:04:21Z","buildId":"7f283c65-b171-48bc-9b71-47fb249f2a0e","buildName":"projects/18308909175/locations/us-central1/builds/7f283c65-b171-48bc-9b71-47fb249f2a0e"}}
+[debug] [2023-03-02T23:04:48.374Z] [create-default-us-central1-detectEvilUsers] Retrying task index 0
+[debug] [2023-03-02T23:04:48.375Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ [none]
+[debug] [2023-03-02T23:04:48.596Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ 200
+[debug] [2023-03-02T23:04:48.596Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ {"name":"operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.create","resource":"projects/real-time-chat-app-b9cff/databases/(default)/documents/messages/{msgId}"},"entryPoint":"detectEvilUsers","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"074907ca9c7dddb340eecedaa5247a6a322cf25f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/763e95b0-80b1-4615-a9ea-fd116cee5513.zip?GoogleAccessId=service-18308909175@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677800060&Signature=R4nQOuqgiGHTTjKfHM9Ay6zYzj3x00%2FAuwUp9cyASnE%2BjP211f6pwIWsSp%2FFNPc9a8LOfxwZOpqJ8gnQ9g%2Fdxs5igUbimc%2BxMLHued4tnUlPt9dQu9DME9Zg9QdkK2l7096U3NpHJTrYyMXWy%2FyKKzueF%2F%2BKdzUpqjyJvkQfYP4Xc6B97%2BDvubzpZ%2F%2Fvt76gCyh4nX9l1Vp0%2FEwxFCreUrNnlCSNWuittvkL5D2BmAhp%2B7O7xKptpBxFWtKtggjJzzYkwxNH5EObz2AJ79auRjCLlDKsm%2FzkJ5Dt5av5eyuG6DKhirfPyhjrTbHXxLF8ljWR%2Bdi8LizsTCCN4SxRHg%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"real-time-chat-app-b9cff\",\"storageBucket\":\"real-time-chat-app-b9cff.appspot.com\"}","GCLOUD_PROJECT":"real-time-chat-app-b9cff","EVENTARC_CLOUD_EVENT_SOURCE":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T23:04:21Z","buildId":"7f283c65-b171-48bc-9b71-47fb249f2a0e","buildName":"projects/18308909175/locations/us-central1/builds/7f283c65-b171-48bc-9b71-47fb249f2a0e"}}
+[debug] [2023-03-02T23:04:58.598Z] [create-default-us-central1-detectEvilUsers] Retrying task index 0
+[debug] [2023-03-02T23:04:58.599Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ [none]
+[debug] [2023-03-02T23:04:58.821Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ 200
+[debug] [2023-03-02T23:04:58.821Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ {"name":"operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.create","resource":"projects/real-time-chat-app-b9cff/databases/(default)/documents/messages/{msgId}"},"entryPoint":"detectEvilUsers","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"074907ca9c7dddb340eecedaa5247a6a322cf25f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/763e95b0-80b1-4615-a9ea-fd116cee5513.zip?GoogleAccessId=service-18308909175@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677800060&Signature=R4nQOuqgiGHTTjKfHM9Ay6zYzj3x00%2FAuwUp9cyASnE%2BjP211f6pwIWsSp%2FFNPc9a8LOfxwZOpqJ8gnQ9g%2Fdxs5igUbimc%2BxMLHued4tnUlPt9dQu9DME9Zg9QdkK2l7096U3NpHJTrYyMXWy%2FyKKzueF%2F%2BKdzUpqjyJvkQfYP4Xc6B97%2BDvubzpZ%2F%2Fvt76gCyh4nX9l1Vp0%2FEwxFCreUrNnlCSNWuittvkL5D2BmAhp%2B7O7xKptpBxFWtKtggjJzzYkwxNH5EObz2AJ79auRjCLlDKsm%2FzkJ5Dt5av5eyuG6DKhirfPyhjrTbHXxLF8ljWR%2Bdi8LizsTCCN4SxRHg%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"real-time-chat-app-b9cff\",\"storageBucket\":\"real-time-chat-app-b9cff.appspot.com\"}","GCLOUD_PROJECT":"real-time-chat-app-b9cff","EVENTARC_CLOUD_EVENT_SOURCE":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T23:04:21Z","buildId":"7f283c65-b171-48bc-9b71-47fb249f2a0e","buildName":"projects/18308909175/locations/us-central1/builds/7f283c65-b171-48bc-9b71-47fb249f2a0e"}}
+[debug] [2023-03-02T23:05:08.823Z] [create-default-us-central1-detectEvilUsers] Retrying task index 0
+[debug] [2023-03-02T23:05:08.823Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ [none]
+[debug] [2023-03-02T23:05:09.045Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ 200
+[debug] [2023-03-02T23:05:09.046Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ {"name":"operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.create","resource":"projects/real-time-chat-app-b9cff/databases/(default)/documents/messages/{msgId}"},"entryPoint":"detectEvilUsers","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"074907ca9c7dddb340eecedaa5247a6a322cf25f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/763e95b0-80b1-4615-a9ea-fd116cee5513.zip?GoogleAccessId=service-18308909175@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677800060&Signature=R4nQOuqgiGHTTjKfHM9Ay6zYzj3x00%2FAuwUp9cyASnE%2BjP211f6pwIWsSp%2FFNPc9a8LOfxwZOpqJ8gnQ9g%2Fdxs5igUbimc%2BxMLHued4tnUlPt9dQu9DME9Zg9QdkK2l7096U3NpHJTrYyMXWy%2FyKKzueF%2F%2BKdzUpqjyJvkQfYP4Xc6B97%2BDvubzpZ%2F%2Fvt76gCyh4nX9l1Vp0%2FEwxFCreUrNnlCSNWuittvkL5D2BmAhp%2B7O7xKptpBxFWtKtggjJzzYkwxNH5EObz2AJ79auRjCLlDKsm%2FzkJ5Dt5av5eyuG6DKhirfPyhjrTbHXxLF8ljWR%2Bdi8LizsTCCN4SxRHg%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"real-time-chat-app-b9cff\",\"storageBucket\":\"real-time-chat-app-b9cff.appspot.com\"}","GCLOUD_PROJECT":"real-time-chat-app-b9cff","EVENTARC_CLOUD_EVENT_SOURCE":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T23:04:21Z","buildId":"7f283c65-b171-48bc-9b71-47fb249f2a0e","buildName":"projects/18308909175/locations/us-central1/builds/7f283c65-b171-48bc-9b71-47fb249f2a0e"}}
+[debug] [2023-03-02T23:05:19.047Z] [create-default-us-central1-detectEvilUsers] Retrying task index 0
+[debug] [2023-03-02T23:05:19.049Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ [none]
+[debug] [2023-03-02T23:05:19.248Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ 200
+[debug] [2023-03-02T23:05:19.249Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ {"name":"operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.create","resource":"projects/real-time-chat-app-b9cff/databases/(default)/documents/messages/{msgId}"},"entryPoint":"detectEvilUsers","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"074907ca9c7dddb340eecedaa5247a6a322cf25f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/763e95b0-80b1-4615-a9ea-fd116cee5513.zip?GoogleAccessId=service-18308909175@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677800060&Signature=R4nQOuqgiGHTTjKfHM9Ay6zYzj3x00%2FAuwUp9cyASnE%2BjP211f6pwIWsSp%2FFNPc9a8LOfxwZOpqJ8gnQ9g%2Fdxs5igUbimc%2BxMLHued4tnUlPt9dQu9DME9Zg9QdkK2l7096U3NpHJTrYyMXWy%2FyKKzueF%2F%2BKdzUpqjyJvkQfYP4Xc6B97%2BDvubzpZ%2F%2Fvt76gCyh4nX9l1Vp0%2FEwxFCreUrNnlCSNWuittvkL5D2BmAhp%2B7O7xKptpBxFWtKtggjJzzYkwxNH5EObz2AJ79auRjCLlDKsm%2FzkJ5Dt5av5eyuG6DKhirfPyhjrTbHXxLF8ljWR%2Bdi8LizsTCCN4SxRHg%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"real-time-chat-app-b9cff\",\"storageBucket\":\"real-time-chat-app-b9cff.appspot.com\"}","GCLOUD_PROJECT":"real-time-chat-app-b9cff","EVENTARC_CLOUD_EVENT_SOURCE":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T23:04:21Z","buildId":"7f283c65-b171-48bc-9b71-47fb249f2a0e","buildName":"projects/18308909175/locations/us-central1/builds/7f283c65-b171-48bc-9b71-47fb249f2a0e"}}
+[debug] [2023-03-02T23:05:29.249Z] [create-default-us-central1-detectEvilUsers] Retrying task index 0
+[debug] [2023-03-02T23:05:29.250Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ [none]
+[debug] [2023-03-02T23:05:29.475Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ 200
+[debug] [2023-03-02T23:05:29.475Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ {"name":"operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.create","resource":"projects/real-time-chat-app-b9cff/databases/(default)/documents/messages/{msgId}"},"entryPoint":"detectEvilUsers","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"074907ca9c7dddb340eecedaa5247a6a322cf25f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/763e95b0-80b1-4615-a9ea-fd116cee5513.zip?GoogleAccessId=service-18308909175@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677800060&Signature=R4nQOuqgiGHTTjKfHM9Ay6zYzj3x00%2FAuwUp9cyASnE%2BjP211f6pwIWsSp%2FFNPc9a8LOfxwZOpqJ8gnQ9g%2Fdxs5igUbimc%2BxMLHued4tnUlPt9dQu9DME9Zg9QdkK2l7096U3NpHJTrYyMXWy%2FyKKzueF%2F%2BKdzUpqjyJvkQfYP4Xc6B97%2BDvubzpZ%2F%2Fvt76gCyh4nX9l1Vp0%2FEwxFCreUrNnlCSNWuittvkL5D2BmAhp%2B7O7xKptpBxFWtKtggjJzzYkwxNH5EObz2AJ79auRjCLlDKsm%2FzkJ5Dt5av5eyuG6DKhirfPyhjrTbHXxLF8ljWR%2Bdi8LizsTCCN4SxRHg%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"real-time-chat-app-b9cff\",\"storageBucket\":\"real-time-chat-app-b9cff.appspot.com\"}","GCLOUD_PROJECT":"real-time-chat-app-b9cff","EVENTARC_CLOUD_EVENT_SOURCE":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T23:04:21Z","buildId":"7f283c65-b171-48bc-9b71-47fb249f2a0e","sourceToken":"e8dfe67e-8643-4a39-9b0b-ce32c6a8dfa5","buildName":"projects/18308909175/locations/us-central1/builds/7f283c65-b171-48bc-9b71-47fb249f2a0e"}}
+[debug] [2023-03-02T23:05:29.476Z] Got source token e8dfe67e-8643-4a39-9b0b-ce32c6a8dfa5 for region us-central1
+[debug] [2023-03-02T23:05:39.476Z] [create-default-us-central1-detectEvilUsers] Retrying task index 0
+[debug] [2023-03-02T23:05:39.477Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ [none]
+[debug] [2023-03-02T23:05:39.700Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ 200
+[debug] [2023-03-02T23:05:39.700Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ {"name":"operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.create","resource":"projects/real-time-chat-app-b9cff/databases/(default)/documents/messages/{msgId}"},"entryPoint":"detectEvilUsers","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"074907ca9c7dddb340eecedaa5247a6a322cf25f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/763e95b0-80b1-4615-a9ea-fd116cee5513.zip?GoogleAccessId=service-18308909175@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677800060&Signature=R4nQOuqgiGHTTjKfHM9Ay6zYzj3x00%2FAuwUp9cyASnE%2BjP211f6pwIWsSp%2FFNPc9a8LOfxwZOpqJ8gnQ9g%2Fdxs5igUbimc%2BxMLHued4tnUlPt9dQu9DME9Zg9QdkK2l7096U3NpHJTrYyMXWy%2FyKKzueF%2F%2BKdzUpqjyJvkQfYP4Xc6B97%2BDvubzpZ%2F%2Fvt76gCyh4nX9l1Vp0%2FEwxFCreUrNnlCSNWuittvkL5D2BmAhp%2B7O7xKptpBxFWtKtggjJzzYkwxNH5EObz2AJ79auRjCLlDKsm%2FzkJ5Dt5av5eyuG6DKhirfPyhjrTbHXxLF8ljWR%2Bdi8LizsTCCN4SxRHg%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"real-time-chat-app-b9cff\",\"storageBucket\":\"real-time-chat-app-b9cff.appspot.com\"}","GCLOUD_PROJECT":"real-time-chat-app-b9cff","EVENTARC_CLOUD_EVENT_SOURCE":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T23:04:21Z","buildId":"7f283c65-b171-48bc-9b71-47fb249f2a0e","sourceToken":"e8dfe67e-8643-4a39-9b0b-ce32c6a8dfa5","buildName":"projects/18308909175/locations/us-central1/builds/7f283c65-b171-48bc-9b71-47fb249f2a0e"}}
+[debug] [2023-03-02T23:05:39.700Z] Got source token e8dfe67e-8643-4a39-9b0b-ce32c6a8dfa5 for region us-central1
+[debug] [2023-03-02T23:05:49.703Z] [create-default-us-central1-detectEvilUsers] Retrying task index 0
+[debug] [2023-03-02T23:05:49.703Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ [none]
+[debug] [2023-03-02T23:05:49.914Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ 200
+[debug] [2023-03-02T23:05:49.915Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ {"name":"operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.create","resource":"projects/real-time-chat-app-b9cff/databases/(default)/documents/messages/{msgId}"},"entryPoint":"detectEvilUsers","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"074907ca9c7dddb340eecedaa5247a6a322cf25f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/763e95b0-80b1-4615-a9ea-fd116cee5513.zip?GoogleAccessId=service-18308909175@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677800060&Signature=R4nQOuqgiGHTTjKfHM9Ay6zYzj3x00%2FAuwUp9cyASnE%2BjP211f6pwIWsSp%2FFNPc9a8LOfxwZOpqJ8gnQ9g%2Fdxs5igUbimc%2BxMLHued4tnUlPt9dQu9DME9Zg9QdkK2l7096U3NpHJTrYyMXWy%2FyKKzueF%2F%2BKdzUpqjyJvkQfYP4Xc6B97%2BDvubzpZ%2F%2Fvt76gCyh4nX9l1Vp0%2FEwxFCreUrNnlCSNWuittvkL5D2BmAhp%2B7O7xKptpBxFWtKtggjJzzYkwxNH5EObz2AJ79auRjCLlDKsm%2FzkJ5Dt5av5eyuG6DKhirfPyhjrTbHXxLF8ljWR%2Bdi8LizsTCCN4SxRHg%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"real-time-chat-app-b9cff\",\"storageBucket\":\"real-time-chat-app-b9cff.appspot.com\"}","GCLOUD_PROJECT":"real-time-chat-app-b9cff","EVENTARC_CLOUD_EVENT_SOURCE":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T23:04:21Z","buildId":"7f283c65-b171-48bc-9b71-47fb249f2a0e","sourceToken":"e8dfe67e-8643-4a39-9b0b-ce32c6a8dfa5","buildName":"projects/18308909175/locations/us-central1/builds/7f283c65-b171-48bc-9b71-47fb249f2a0e"}}
+[debug] [2023-03-02T23:05:49.915Z] Got source token e8dfe67e-8643-4a39-9b0b-ce32c6a8dfa5 for region us-central1
+[debug] [2023-03-02T23:05:59.916Z] [create-default-us-central1-detectEvilUsers] Retrying task index 0
+[debug] [2023-03-02T23:05:59.917Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ [none]
+[debug] [2023-03-02T23:06:00.163Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ 200
+[debug] [2023-03-02T23:06:00.164Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ {"name":"operations/cmVhbC10aW1lLWNoYXQtYXBwLWI5Y2ZmL3VzLWNlbnRyYWwxL2RldGVjdEV2aWxVc2Vycy9mdFVqR0FxSHNoSQ","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.create","resource":"projects/real-time-chat-app-b9cff/databases/(default)/documents/messages/{msgId}"},"entryPoint":"detectEvilUsers","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"074907ca9c7dddb340eecedaa5247a6a322cf25f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-697381106926.us-central1.cloudfunctions.appspot.com/763e95b0-80b1-4615-a9ea-fd116cee5513.zip?GoogleAccessId=service-18308909175@gcf-admin-robot.iam.gserviceaccount.com&Expires=1677800060&Signature=R4nQOuqgiGHTTjKfHM9Ay6zYzj3x00%2FAuwUp9cyASnE%2BjP211f6pwIWsSp%2FFNPc9a8LOfxwZOpqJ8gnQ9g%2Fdxs5igUbimc%2BxMLHued4tnUlPt9dQu9DME9Zg9QdkK2l7096U3NpHJTrYyMXWy%2FyKKzueF%2F%2BKdzUpqjyJvkQfYP4Xc6B97%2BDvubzpZ%2F%2Fvt76gCyh4nX9l1Vp0%2FEwxFCreUrNnlCSNWuittvkL5D2BmAhp%2B7O7xKptpBxFWtKtggjJzzYkwxNH5EObz2AJ79auRjCLlDKsm%2FzkJ5Dt5av5eyuG6DKhirfPyhjrTbHXxLF8ljWR%2Bdi8LizsTCCN4SxRHg%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"real-time-chat-app-b9cff\",\"storageBucket\":\"real-time-chat-app-b9cff.appspot.com\"}","GCLOUD_PROJECT":"real-time-chat-app-b9cff","EVENTARC_CLOUD_EVENT_SOURCE":"projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-03-02T23:05:52Z","buildId":"7f283c65-b171-48bc-9b71-47fb249f2a0e","sourceToken":"e8dfe67e-8643-4a39-9b0b-ce32c6a8dfa5","buildName":"projects/18308909175/locations/us-central1/builds/7f283c65-b171-48bc-9b71-47fb249f2a0e"},"done":true,"error":{"code":3,"message":"Function failed on loading user code. This is likely due to a bug in the user code. Error message: Error: please examine your function logs to see the error cause: https://cloud.google.com/functions/docs/monitoring/logging#viewing_logs. Additional troubleshooting documentation can be found at https://cloud.google.com/functions/docs/troubleshooting#logging. Please visit https://cloud.google.com/functions/docs/troubleshooting for in-depth troubleshooting documentation."}}
+[debug] [2023-03-02T23:06:00.164Z] Got source token e8dfe67e-8643-4a39-9b0b-ce32c6a8dfa5 for region us-central1
+[error] Function failed on loading user code. This is likely due to a bug in the user code. Error message: Error: please examine your function logs to see the error cause: https://cloud.google.com/functions/docs/monitoring/logging#viewing_logs. Additional troubleshooting documentation can be found at https://cloud.google.com/functions/docs/troubleshooting#logging. Please visit https://cloud.google.com/functions/docs/troubleshooting for in-depth troubleshooting documentation.
+[debug] [2023-03-02T23:06:00.174Z] Total Function Deployment time: 99200
+[debug] [2023-03-02T23:06:00.174Z] 1 Functions Deployed
+[debug] [2023-03-02T23:06:00.174Z] 1 Functions Errored
+[debug] [2023-03-02T23:06:00.174Z] 0 Function Deployments Aborted
+[debug] [2023-03-02T23:06:00.174Z] Average Function Deployment time: 99199
+[info] 
+[info] Functions deploy had errors with the following functions:
+	detectEvilUsers(us-central1)
+[info] i  functions: cleaning up build files... 
+[debug] [2023-03-02T23:06:00.368Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/real-time-chat-app-b9cff/locations/us-central1/repositories/gcf-artifacts/packages/detect_evil_users [none]
+[debug] [2023-03-02T23:06:00.369Z] >>> [apiv2][query] GET https://us.gcr.io/v2/real-time-chat-app-b9cff/gcf/us-central1/tags/list [none]
+[debug] [2023-03-02T23:06:00.553Z] <<< [apiv2][status] GET https://us.gcr.io/v2/real-time-chat-app-b9cff/gcf/us-central1/tags/list 200
+[debug] [2023-03-02T23:06:00.553Z] <<< [apiv2][body] GET https://us.gcr.io/v2/real-time-chat-app-b9cff/gcf/us-central1/tags/list {"child":[],"manifest":{},"name":"real-time-chat-app-b9cff/gcf/us-central1","tags":[]}
+[debug] [2023-03-02T23:06:00.554Z] Could not find image for function projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers
+[debug] [2023-03-02T23:06:00.597Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/real-time-chat-app-b9cff/locations/us-central1/repositories/gcf-artifacts/packages/detect_evil_users 200
+[debug] [2023-03-02T23:06:00.597Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/real-time-chat-app-b9cff/locations/us-central1/repositories/gcf-artifacts/packages/detect_evil_users {"name":"projects/real-time-chat-app-b9cff/locations/us-central1/operations/94396213-24af-44b4-b194-d78168ba3241","metadata":{"@type":"type.googleapis.com/google.devtools.artifactregistry.v1beta2.OperationMetadata"}}
+[debug] [2023-03-02T23:06:00.599Z] >>> [apiv2][query] GET https://artifactregistry.googleapis.com/v1beta2/projects/real-time-chat-app-b9cff/locations/us-central1/operations/94396213-24af-44b4-b194-d78168ba3241 [none]
+[debug] [2023-03-02T23:06:00.786Z] <<< [apiv2][status] GET https://artifactregistry.googleapis.com/v1beta2/projects/real-time-chat-app-b9cff/locations/us-central1/operations/94396213-24af-44b4-b194-d78168ba3241 200
+[debug] [2023-03-02T23:06:00.786Z] <<< [apiv2][body] GET https://artifactregistry.googleapis.com/v1beta2/projects/real-time-chat-app-b9cff/locations/us-central1/operations/94396213-24af-44b4-b194-d78168ba3241 {"name":"projects/real-time-chat-app-b9cff/locations/us-central1/operations/94396213-24af-44b4-b194-d78168ba3241","metadata":{"@type":"type.googleapis.com/google.devtools.artifactregistry.v1beta2.OperationMetadata"},"done":true,"response":{"@type":"type.googleapis.com/google.protobuf.Empty"}}
+[debug] [2023-03-02T23:06:00.787Z] Functions deploy failed.
+[debug] [2023-03-02T23:06:00.787Z] {
+  "endpoint": {
+    "id": "detectEvilUsers",
+    "project": "real-time-chat-app-b9cff",
+    "region": "us-central1",
+    "entryPoint": "detectEvilUsers",
+    "platform": "gcfv1",
+    "runtime": "nodejs16",
+    "eventTrigger": {
+      "eventType": "providers/cloud.firestore/eventTypes/document.create",
+      "retry": false,
+      "eventFilters": {
+        "resource": "projects/real-time-chat-app-b9cff/databases/(default)/documents/messages/{msgId}"
+      }
+    },
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    },
+    "serviceAccount": null,
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "vpc": null,
+    "environmentVariables": {
+      "FIREBASE_CONFIG": "{\"projectId\":\"real-time-chat-app-b9cff\",\"storageBucket\":\"real-time-chat-app-b9cff.appspot.com\"}",
+      "GCLOUD_PROJECT": "real-time-chat-app-b9cff",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/real-time-chat-app-b9cff/locations/us-central1/functions/detectEvilUsers"
+    },
+    "codebase": "default",
+    "targetedByOnly": false,
+    "hash": "074907ca9c7dddb340eecedaa5247a6a322cf25f"
+  },
+  "op": "create",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "exit": 1,
+    "message": "Function failed on loading user code. This is likely due to a bug in the user code. Error message: Error: please examine your function logs to see the error cause: https://cloud.google.com/functions/docs/monitoring/logging#viewing_logs. Additional troubleshooting documentation can be found at https://cloud.google.com/functions/docs/troubleshooting#logging. Please visit https://cloud.google.com/functions/docs/troubleshooting for in-depth troubleshooting documentation.",
+    "status": 3
+  }
+}
+[debug] [2023-03-02T23:06:00.938Z] Error: Failed to create function detectEvilUsers in region us-central1
+    at /opt/homebrew/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:48:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Fabricator.createV1Function (/opt/homebrew/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:177:32)
+    at async Fabricator.createEndpoint (/opt/homebrew/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:129:13)
+    at async handle (/opt/homebrew/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:85:17)
+[error] 
+[error] Error: There was an error deploying functions
