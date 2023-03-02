@@ -56,7 +56,7 @@ const ChatRoom = () => {
 
   return (
     <>
-      <main className="chat-room h-[80vh] overflow-y-scroll px-4 md:px-8 touch-pan-y">
+      <main className="chat-room h-[80vh] overflow-y-scroll px-4  touch-pan-y">
         {messages &&
           messages.map((message) => (
             <ChatMessage key={message.createdAt} message={message} />
@@ -67,7 +67,7 @@ const ChatRoom = () => {
 
       <form
         onSubmit={sendMessage}
-        className="h-[10vh] border-t border-gray-700 flex align-middle bg-background shadow-lg fixed bottom-0 w-full px-8 md:px-12"
+        className="h-[10vh] border-t border-gray-700 flex align-middle bg-background shadow-lg fixed bottom-0 w-full px-4 md:px-8 py-2"
       >
         <input
           value={formValue}

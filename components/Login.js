@@ -69,7 +69,7 @@ export default function Login() {
 
       <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
-          <div className="m-auto bg-green p-3 rounded-full w-[75px]">
+          <div className="m-auto bg-green p-3 rounded-full w-[75px] shadow-xl">
           <RiChatSmile3Fill size={50} className='text-headerText m-auto'/>
           </div>
           <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-headerText">

@@ -2,7 +2,7 @@ import React from 'react'
 
 const SideBar = () => {
   return (
-    <div className='w-[400px] min-w-[200px] h-full bg-inputFocus'>
+    <div className='w-1/5 h-full z-50 bg-inputFocus'>
         <div>
             <p>test</p>
         </div>

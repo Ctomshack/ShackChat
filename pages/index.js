@@ -44,14 +44,15 @@ export default function Home() {
           name="description"
           content="A real-time chat app built with next.js, firebase, and tailwindcss. Bootstrapped with create-next-app."
           />
-        <link rel="icon" href="/bubble.ico" />
+        <link rel="icon" href="/shackchat.png" />
       </Head>
-      <div className="App relative flex h-[100vh] flex-col">
+      <div className="App relative h-[100vh]">
       {user ? 
       <>
-      <div>
+      {/* <SideBar /> */}
+      <div className="">
 
-        <header className="flex flex-row justify-between px-8 py-6 bg-sidebar border-b border-gray-700 text-gray-700 shadow-lg fixed w-full top-0 z-20">
+        <header className="flex justify-between px-8 py-6 bg-sidebar border-b border-gray-700 text-gray-700 shadow-lg fixed w-full top-0 z-20">
           <Welcome /> 
           <Logout /> 
         </header>
@@ -74,7 +75,7 @@ export default function Home() {
 function Logout() {
   return (
     auth.currentUser && (
-      <button className="text-green underline hover:text-slate-300 block" onClick={() => auth.signOut()}>
+      <button className="text-green underline hover:text-slate-300 " onClick={() => auth.signOut()}>
         Sign Out
       </button>
     )
@@ -85,7 +86,7 @@ function Welcome() {
   let username = auth.currentUser._delegate.displayName.split(' ')[0];
   return (
     auth.currentUser && (
-      <h3 className="text-slate-300 bg-sidebar">{`Welcome to ShackChat, ${username}`}</h3>
+      <h3 className="text-slate-300 bg-sidebar ">{`Welcome to ShackChat, ${username}`}</h3>
     )
   )
 }
