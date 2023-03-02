@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ChatMessage from "./ChatMessage";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
@@ -33,6 +33,10 @@ const ChatRoom = () => {
   // console.log(messages)
   // console.log(auth.currentUser)
 
+  useEffect(() => {
+    textValue.current.scrollIntoView({behavior: 'smooth'})
+  })
+
   const sendMessage = async (e) => {
     e.preventDefault();
 
@@ -56,7 +60,7 @@ const ChatRoom = () => {
 
   return (
     <>
-      <main className="chat-room h-[80vh] overflow-y-scroll px-4  touch-pan-y">
+      <main className="chat-room h-full overflow-y-scroll px-4 py-4 touch-pan-y">
         {messages &&
           messages.map((message) => (
             <ChatMessage key={message.createdAt} message={message} />
@@ -67,19 +71,19 @@ const ChatRoom = () => {
 
       <form
         onSubmit={sendMessage}
-        className="h-[10vh] border-t border-gray-700 flex align-middle bg-background shadow-lg fixed bottom-0 w-full px-4 md:px-8 py-2"
+        className="h-[10vh] border-t border-gray-700 flex align-middle bg-background shadow-lg fixed bottom-0 w-full px-2 md:px-8 py-2"
       >
         <input
           value={formValue}
           onChange={(e) => setFormValue(e.target.value)}
           placeholder="Type message here"
-          className="ml-2 my-4 block w-full appearance-none rounded-md border bg-input text-slate-100 border-gray-600 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-green focus:outline-none focus:ring-green sm:text-sm"
+          className=" my-2 md:my-4 block w-full appearance-none rounded-md border bg-input text-slate-100 border-gray-600 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-green focus:outline-none focus:ring-green sm:text-sm"
         />
 
         <button
           type="submit"
           disabled={!formValue}
-          className="bg-sendInput cursor-pointer text-green rounded-md my-4 sm:my-4 px-6 text-center align-middle border border-gray-600 hover:bg-gray-900 hover:text-slate-100"
+          className="bg-sendInput cursor-pointer text-green rounded-md my-2 md:my-4  px-6 text-center align-middle border border-gray-600 hover:bg-gray-900 hover:text-slate-100"
         >
           <RiSendPlaneFill size={25}/>
         </button>

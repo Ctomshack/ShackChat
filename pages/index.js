@@ -50,18 +50,15 @@ export default function Home() {
       {user ? 
       <>
       {/* <SideBar /> */}
-      <div className="">
-
         <header className="flex justify-between px-8 py-6 bg-sidebar border-b border-gray-700 text-gray-700 shadow-lg fixed w-full top-0 z-20">
           <Welcome /> 
           <Logout /> 
         </header>
 
-        <section id="chat-room-section" className=" my-4 mt-[10vh] bg-background">
+        <section id="chat-room-section" className=" my-4 mt-20 bg-background">
         {error && <p className="error font-red-500">{error}</p>}
         <ChatRoom /> 
         </section>
-      </div>
         </>
         : 
         <section id="chat-room-section" className=" my-4 mt-[10vh] bg-background">

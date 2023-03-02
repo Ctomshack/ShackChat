@@ -51,9 +51,9 @@ main::-webkit-scrollbar {
   width: 0.25rem;
 }
 
-/* main::-webkit-scrollbar-track {
+main::-webkit-scrollbar-track {
   background: #161616;
-} */
+}
 
 main::-webkit-scrollbar-thumb {
   background: #19a873;
