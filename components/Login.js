@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { AiFillGoogleCircle, AiFillGithub } from "react-icons/ai";
 import { BsFacebook } from "react-icons/bs";
+import { RiChatSmile3Fill } from 'react-icons/ri';
 
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
@@ -68,29 +69,34 @@ export default function Login() {
 
       <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
-          <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-            Sign in to your account
+          <div className="m-auto bg-green p-3 rounded-full w-[75px]">
+          <RiChatSmile3Fill size={50} className='text-headerText m-auto'/>
+          </div>
+          <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-headerText">
+            Shack Chat
           </h2>
         </div>
 
-        <div className="mt-2 sm:mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-          <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+        <div className=" sm:mt-6 sm:mx-auto sm:w-full sm:max-w-md">
+          <div className="bg-background py-8 px-4 shadow-xl sm:rounded-lg sm:px-10">
             <div className="">
               <div>
                 <div>
-                  <p className="text-sm font-medium text-gray-700">
+                  <div className="flex justify-center">
+                  <p className="text-sm font-medium text-slate-300 text-center">
                     Sign in with
                   </p>
+                  </div>
 
                   <div className="mt-1 grid grid-cols-3 gap-3">
                     <div>
                       <button
                         type="button"
                         onClick={signInWithGoogle}
-                        className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-500 shadow-sm hover:bg-gray-50"
+                        className="inline-flex w-full justify-center rounded-md border border-gray-500 bg-input py-2 px-4 text-sm font-medium text-gray-500 shadow-sm hover:bg-gray-900"
                       >
                         <span className="sr-only">Sign in with Google</span>
-                        <AiFillGoogleCircle size={20} className="text-google" />
+                        <AiFillGoogleCircle size={20} className="text-green" />
                       </button>
                     </div>
 
@@ -98,10 +104,10 @@ export default function Login() {
                       <button
                         type="button"
                         onClick={signInWithFacebook}
-                        className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-500 shadow-sm hover:bg-gray-50"
+                        className="inline-flex w-full justify-center rounded-md border border-gray-500 bg-input py-2 px-4 text-sm font-medium text-gray-500 shadow-sm hover:bg-gray-900"
                       >
                         <span className="sr-only">Sign in with Facebook</span>
-                        <BsFacebook size={20} className="text-google" />
+                        <BsFacebook size={20} className="text-green" />
                       </button>
                     </div>
 
@@ -109,10 +115,10 @@ export default function Login() {
                       <button
                         type="button"
                         onClick={signInWithGithub}
-                        className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-500 shadow-sm hover:bg-gray-50"
+                        className="inline-flex w-full justify-center rounded-md border border-gray-500 bg-input py-2 px-4 text-sm font-medium text-gray-500 shadow-sm hover:bg-gray-900"
                       >
                         <span className="sr-only">Sign in with GitHub</span>
-                        <AiFillGithub size={20} className="text-google" />
+                        <AiFillGithub size={20} className="text-green" />
                       </button>
                     </div>
                   </div>
@@ -123,10 +129,10 @@ export default function Login() {
                     className="absolute inset-0 flex items-center"
                     aria-hidden="true"
                   >
-                    <div className="w-full border-t border-gray-300" />
+                    <div className="w-full border-t border-gray-500" />
                   </div>
                   <div className="relative flex justify-center text-sm">
-                    <span className="bg-white px-2 text-gray-500">
+                    <span className="bg-background px-2 text-slate-300">
                       Or continue with
                     </span>
                   </div>
@@ -138,7 +144,7 @@ export default function Login() {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-gray-700"
+                      className="block text-sm font-medium text-slate-300"
                     >
                       Email address
                     </label>
@@ -150,7 +156,7 @@ export default function Login() {
                         ref={emailRef}
                         autoComplete="email"
                         required
-                        className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-google focus:outline-none focus:ring-google sm:text-sm"
+                        className="block w-full appearance-none rounded-md border border-gray-500 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-green focus:outline-none focus:ring-google sm:text-sm bg-input text-slate-300"
                       />
                     </div>
                   </div>
@@ -158,7 +164,7 @@ export default function Login() {
                   <div className="space-y-1">
                     <label
                       htmlFor="password"
-                      className="block text-sm font-medium text-gray-700"
+                      className="block text-sm font-medium text-slate-300"
                     >
                       Password
                     </label>
@@ -170,7 +176,7 @@ export default function Login() {
                         ref={passwordRef}
                         autoComplete="current-password"
                         required
-                        className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-google focus:outline-none focus:ring-google sm:text-sm"
+                        className="block w-full appearance-none rounded-md border border-gray-500 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-green focus:outline-none focus:ring-google sm:text-sm bg-input text-slate-300"
                       />
                     </div>
                   </div>
@@ -181,7 +187,7 @@ export default function Login() {
                         id="remember-me"
                         name="remember-me"
                         type="checkbox"
-                        className="h-4 w-4 rounded border-gray-300 text-google focus:ring-google"
+                        className="h-4 w-4 rounded border-gray-500 text-google focus:ring-google"
                       />
                       <label
                         htmlFor="remember-me"
@@ -204,7 +210,7 @@ export default function Login() {
                   <div>
                     <button
                       type="submit"
-                      className="flex w-full justify-center rounded-md border border-transparent bg-google py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-google focus:ring-offset-2"
+                      className="flex w-full justify-center rounded-md border border-transparent bg-green py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
                     >
                       Sign in
                     </button>

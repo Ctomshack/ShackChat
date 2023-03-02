@@ -11,6 +11,7 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
 import "firebase/compat/analytics";
+import SideBar from "@/components/SideBar";
 
 firebase.initializeApp({
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
@@ -38,30 +39,33 @@ export default function Home() {
     return (
       <>
       <Head>
-        <title>RealChat-demo</title>
+        <title>ShackChat</title>
         <meta
           name="description"
           content="A real-time chat app built with next.js, firebase, and tailwindcss. Bootstrapped with create-next-app."
           />
         <link rel="icon" href="/bubble.ico" />
       </Head>
-      <div className="App flex h-[100vh] flex-col">
-        <header className="flex flex-row justify-between px-8 py-6 bg-header text-gray-700 shadow-lg fixed w-full top-0 z-20">
-          {user ? <Welcome /> : 
-          <h3 className="text-gray">
-          {"< "}
-          <span className="text-iosBlue font-bold">{"/"}</span>
-          <span className="text-gray-700">{" ChatroomDemo "}</span>
-          <span>{" >"}</span>
-          </h3>
-          }
-          <Logout />
+      <div className="App relative flex h-[100vh] flex-col">
+      {user ? 
+      <>
+      <div>
+
+        <header className="flex flex-row justify-between px-8 py-6 bg-sidebar border-b border-gray-700 text-gray-700 shadow-lg fixed w-full top-0 z-20">
+          <Welcome /> 
+          <Logout /> 
         </header>
 
-        <section id="chat-room-section" className=" my-4 mt-[10vh]">
-          {error && <p className="error font-red-500">{error}</p>}
-          {user ? <ChatRoom /> : <Auth />}
+        <section id="chat-room-section" className=" my-4 mt-[10vh] bg-background">
+        {error && <p className="error font-red-500">{error}</p>}
+        <ChatRoom /> 
         </section>
+      </div>
+        </>
+        : 
+        <section id="chat-room-section" className=" my-4 mt-[10vh] bg-background">
+          {error && <p className="error font-red-500">{error}</p>} <Auth />
+          </section>}
       </div>
     </>
   );
@@ -70,7 +74,7 @@ export default function Home() {
 function Logout() {
   return (
     auth.currentUser && (
-      <button className="text-iosBlue block" onClick={() => auth.signOut()}>
+      <button className="text-green underline hover:text-slate-300 block" onClick={() => auth.signOut()}>
         Sign Out
       </button>
     )
@@ -81,7 +85,7 @@ function Welcome() {
   let username = auth.currentUser._delegate.displayName.split(' ')[0];
   return (
     auth.currentUser && (
-      <h3 className="text-gray">{`Welcome, ${username}`}</h3>
+      <h3 className="text-slate-300 bg-sidebar">{`Welcome to ShackChat, ${username}`}</h3>
     )
   )
 }

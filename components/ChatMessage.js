@@ -25,10 +25,10 @@ const ChatMessage = (props) => {
 
   return (
     <>
-      <div className={`message ${messageClass} `}>
+      <div className={`message ${messageClass} my-2`}>
         <div className={` ${messageClass} w-full message flex-row gap-0.5`}>
           <div
-            className={`text-sm text-gray-600 self-middle ${messageClass} px-2`}
+            className={`text-sm text-displayName self-middle ${messageClass} px-2`}
           >
             {displayName}
           </div>

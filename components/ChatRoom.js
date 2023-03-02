@@ -6,6 +6,7 @@ import "firebase/compat/auth";
 import "firebase/compat/analytics";
 import { useUserContext } from "@/context/userContext";
 import { useCollectionData } from "react-firebase-hooks/firestore";
+import { RiSendPlaneFill } from 'react-icons/ri';
 
 firebase.initializeApp({
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
@@ -66,21 +67,21 @@ const ChatRoom = () => {
 
       <form
         onSubmit={sendMessage}
-        className="h-[10vh] flex align-middle bg-header shadow-lg fixed bottom-0 w-full px-8 md:px-12"
+        className="h-[10vh] border-t border-gray-700 flex align-middle bg-background shadow-lg fixed bottom-0 w-full px-8 md:px-12"
       >
         <input
           value={formValue}
           onChange={(e) => setFormValue(e.target.value)}
           placeholder="Type message here"
-          className="mx-2 my-4 block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-google focus:outline-none focus:ring-google sm:text-sm"
+          className="ml-2 my-4 block w-full appearance-none rounded-md border bg-input text-slate-100 border-gray-600 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-green focus:outline-none focus:ring-green sm:text-sm"
         />
 
         <button
           type="submit"
           disabled={!formValue}
-          className="bg-iosBlue cursor-pointer text-white rounded-md my-4 sm:my-6 py-2 px-4 text-center align-middle"
+          className="bg-sendInput cursor-pointer text-green rounded-md my-4 sm:my-4 px-6 text-center align-middle border border-gray-600 hover:bg-gray-900 hover:text-slate-100"
         >
-          Send
+          <RiSendPlaneFill size={25}/>
         </button>
       </form>
     </>

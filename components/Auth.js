@@ -14,14 +14,14 @@ const Auth = () => {
       {!index ? <Login /> : <RegisterUser />}
       <p
         onClick={toggleIndex}
-        className=" m-auto text-middle text-center text-sm text-gray-600 -mt-10"
+        className=" m-auto text-middle text-center text-sm text-slate-300 -mt-10"
       >
         {!index ? (
           <>
             <span>Or </span>
             <a
               href="#"
-              className="font-medium text-google hover:text-indigo-500"
+              className="font-medium text-green hover:underline"
             >
               Create an account
             </a>
@@ -31,7 +31,7 @@ const Auth = () => {
             <span>Or </span>
             <a
               href="#"
-              className="font-medium text-google hover:text-indigo-500"
+              className="font-medium text-green hover:underline"
             >
               Already have an account?
             </a>
